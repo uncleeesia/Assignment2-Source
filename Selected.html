@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <!-- import carousel library -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- import carousel library -->
+  </head>
+
+  <body>
+    <!-- Header section -->
+    <header>
+      <canvas id="meteorCanvas"></canvas>
+      <script src="./src/meteor-shower.js"></script>
+      <div class="moving-text">AZroom Car Rental</div>
+    </header>
+
+    <!-- Navigation bar -->
+    <nav>
+      <ul>
+        <li><a href="#">Explore Cars</a></li>
+        <li><a href="./about.html">Reservations</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+      <!-- Article with an image and a caption -->
+      <div>
+        <h2>Car 1</h2>
+        <div
+          class="gallery js-flickity"
+          data-flickity-options='{ "wrapAround": true }'
+        >
+          <div class="gallery-cell car1"></div>
+          <div class="gallery-cell car2"></div>
+          <div class="gallery-cell car3"></div>
+          <div class="gallery-cell car4"></div>
+          <div class="gallery-cell car5"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+      <p>&copy; 2024 HTML and CSS Demonstration. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+/* Basic styles for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Navigation bar styles */
+nav {
+    margin: 0;
+    padding: 10px;
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Section and article styles */
+section,
+article {
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    /* Add margin to separate footer from content */
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+-- Carousel
+/* external css: flickity.css */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  body { font-family: sans-serif; }
+  
+  .gallery {
+    background: #EEE;
+  }
+  
+  .gallery-cell {
+    width: 66%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    counter-increment: gallery-cell;
+  }
+  
+  /* cell number */
+  .gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+    nav ul li {
+        float: none;
+    }
+}
