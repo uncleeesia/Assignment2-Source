@@ -3,59 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-    <link rel="stylesheet" href="src/styles.css" />
+    <title>Car Rental Company</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script src="./src/Component/LoadCard/LoadCard.js" defer></script>
+    <script src="./Index.js" defer></script>
 
-    <!-- import carousel library -->
+    <!-- BOOTSTRAP Library import  -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
     />
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <!-- import carousel library -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BOOTSTRAP Library import  -->
   </head>
-
   <body>
-    <!-- Header section -->
+    <!-- Header -->
     <header>
-      <canvas id="meteorCanvas"></canvas>
-      <script src="./src/meteor-shower.js"></script>
-      <div class="moving-text">AZroom Car Rental</div>
+      <h1>Car Rental Company</h1>
+      <div class="container-fluid">
+        <div id="navbar-placeholder"></div>
+        <div id="LogIn-placeholder"></div>
+      </div>
     </header>
+    <!-- Main Content -->
+    <main class="container-fluid p-5">
+      <!-- Why Choose Us Section -->
 
-    <!-- Navigation bar -->
-    <nav>
-      <ul>
-        <li><a href="#">Explore Cars</a></li>
-        <li><a href="./about.html">Reservations</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+      <h2>Why Choose Us?</h2>
+      <section id="why-choose-us-container"></section>
 
-    <!-- Main content -->
-    <main id="homepageDisplayCar">
-      <!-- Article with an image and a caption -->
-      <div id="SelectionFilter">
-        <h2>EV Vehicles</h2>
-        <div>
-          <input type="text">
+      <template id="why-choose-us-template">
+        <div class="why-choose-us"></div>
+      </template>
 
+      <!-- Promotion Section -->
+      <section class="promotion">
+        <h2>Special Promotion!</h2>
+        <p>Get 20% off on your first rental. Book now!</p>
+      </section>
+      <!-- Customer Feedback Section -->
+      <section id="feedback">
+        <h2>Customer Feedback</h2>
+        <div class="feedback">
+          <div>
+            <p>"Great service and affordable prices!"</p>
+            <p>- John Doe</p>
+          </div>
+          <div>
+            <p>"Loved the car selection. Highly recommended!"</p>
+            <p>- Jane Smith</p>
+          </div>
         </div>
-      </div>
-
-        <div class="ManyCarChoices">
-          <div class="OneCar"></div>
-          <div class="OneCar"></div>
-          <div class="OneCar"></div>
-          <div class="OneCar"></div>
-          <div class="OneCar"></div>
-          <div class="OneCar"></div>
-      </div>
+      </section>
+      <!-- Rent Now Steps Section -->
+      <section id="rent-steps">
+        <h2>Rent Now in 3 Easy Steps</h2>
+        <div class="rent-steps">
+          <div>
+            <h3>1. Choose Your Car</h3>
+            <p>Select from our wide range of vehicles.</p>
+          </div>
+          <div>
+            <h3>2. Book Online</h3>
+            <p>Reserve your car in just a few clicks.</p>
+          </div>
+          <div>
+            <h3>3. Pick Up & Drive</h3>
+            <p>Collect your car and hit the road!</p>
+          </div>
+        </div>
+      </section>
+      <!-- Our Locations Section -->
+      <section id="locations">
+        <h2>Our Locations</h2>
+        <div class="locations">
+          <div>
+            <h3>New York</h3>
+            <p>123 Main St, New York, NY</p>
+          </div>
+          <div>
+            <h3>Los Angeles</h3>
+            <p>456 Sunset Blvd, Los Angeles, CA</p>
+          </div>
+          <div>
+            <h3>Chicago</h3>
+            <p>789 Lake Shore Dr, Chicago, IL</p>
+          </div>
+        </div>
+      </section>
     </main>
-
-    <!-- Footer section -->
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2024 HTML and CSS Demonstration. All rights reserved.</p>
+      <p>&copy; 2023 Car Rental Company. All rights reserved.</p>
+      <p>
+        <a href="#sitemap">Sitemap</a> |
+        <a href="#privacy-policy">Privacy Policy</a>
+      </p>
     </footer>
   </body>
 </html>
