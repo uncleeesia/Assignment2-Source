@@ -1,0 +1,14 @@
+[
+  {
+    "title": "New York",
+    "description": "123 Main St, New York, NY"
+  },
+  {
+    "title": "Los Angeles",
+    "description": "456 Sunset Blvd, Los Angeles, CA"
+  },
+  {
+    "title": "Chicago",
+    "description": "789 Lake Shore Dr, Chicago, IL"
+  }
+]

@@ -62,13 +62,13 @@ h2 {
 }
 
 /* Why Choose Us Section */
-.why-choose-us {
+.customBorder {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
-.why-choose-us div {
+.customBorder div {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 10px;
@@ -77,11 +77,11 @@ h2 {
     transition: transform 0.3s;
 }
 
-.why-choose-us div:hover {
+.customBorder div:hover {
     transform: translateY(-5px);
 }
 
-.why-choose-us h3 {
+.customBorder h3 {
     color: #1e90ff;
     margin-bottom: 0.5rem;
 }

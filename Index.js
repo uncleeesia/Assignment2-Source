@@ -1,10 +1,10 @@
-fetch("./src/component/NavBar/navbar.html")
+fetch("./src/component/Common/NavBar/navbar.html")
   .then((response) => response.text())
   .then(
     (data) => (document.getElementById("navbar-placeholder").innerHTML = data)
   );
 
-fetch("./src/component/NavBar/LogIn/Login.html")
+fetch("./src/component/Common/NavBar/LogIn/Login.html")
   .then((response) => response.text())
   .then(
     (data) => (document.getElementById("LogIn-placeholder").innerHTML = data)

@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car Rental Company</title>
     <link rel="stylesheet" href="./src/styles.css" />
-    <script src="./src/Component/LoadCard/LoadCard.js" defer></script>
+    <script
+      type="module"
+      src="./src/Component/PopulateChooseUs/PopulateChooseUs.js"
+      defer
+    ></script>
+    <script
+      type="module"
+      src="./src/Component/PopulateSteps/PopulateSteps.js"
+      defer
+    ></script>
+    <script
+      type="module"
+      src="./src/Component/PopulateLocation/PopulateLocation.js"
+      defer
+    ></script>
+    <script
+      type="module"
+      src="./src/Component/PopulateCustomerFeedBack/PopulateCustomerFeedBack.js"
+      defer
+    ></script>
     <script src="./Index.js" defer></script>
 
     <!-- BOOTSTRAP Library import  -->
@@ -46,67 +65,33 @@
       <!-- Why Choose Us Section -->
 
       <h2>Why Choose Us?</h2>
-      <section id="why-choose-us-container"></section>
-
-      <template id="why-choose-us-template">
-        <div class="why-choose-us"></div>
-      </template>
+      <section
+        id="why-choose-us-container"
+        class="container-fluid row col-md-12 customBorder justify-content-around"
+      ></section>
 
       <!-- Promotion Section -->
       <section class="promotion">
         <h2>Special Promotion!</h2>
         <p>Get 20% off on your first rental. Book now!</p>
       </section>
+
+      <h2>Customer Feedback</h2>
       <!-- Customer Feedback Section -->
-      <section id="feedback">
-        <h2>Customer Feedback</h2>
-        <div class="feedback">
-          <div>
-            <p>"Great service and affordable prices!"</p>
-            <p>- John Doe</p>
-          </div>
-          <div>
-            <p>"Loved the car selection. Highly recommended!"</p>
-            <p>- Jane Smith</p>
-          </div>
-        </div>
-      </section>
+      <section id="feedback-container"  class="feedback"></section>
+
       <!-- Rent Now Steps Section -->
-      <section id="rent-steps">
-        <h2>Rent Now in 3 Easy Steps</h2>
-        <div class="rent-steps">
-          <div>
-            <h3>1. Choose Your Car</h3>
-            <p>Select from our wide range of vehicles.</p>
-          </div>
-          <div>
-            <h3>2. Book Online</h3>
-            <p>Reserve your car in just a few clicks.</p>
-          </div>
-          <div>
-            <h3>3. Pick Up & Drive</h3>
-            <p>Collect your car and hit the road!</p>
-          </div>
-        </div>
-      </section>
+      <h2>Rent Now in 3 Easy Steps</h2>
+      <section
+        id="rent-steps-container"
+        class="container-fluid row col-md-12 customBorder justify-content-around"
+      ></section>
       <!-- Our Locations Section -->
-      <section id="locations">
-        <h2>Our Locations</h2>
-        <div class="locations">
-          <div>
-            <h3>New York</h3>
-            <p>123 Main St, New York, NY</p>
-          </div>
-          <div>
-            <h3>Los Angeles</h3>
-            <p>456 Sunset Blvd, Los Angeles, CA</p>
-          </div>
-          <div>
-            <h3>Chicago</h3>
-            <p>789 Lake Shore Dr, Chicago, IL</p>
-          </div>
-        </div>
-      </section>
+      <h2>Our Locations</h2>
+      <section
+        id="locations-container"
+        class="container-fluid row col-md-12 customBorder justify-content-around"
+      ></section>
     </main>
     <!-- Footer -->
     <footer>
