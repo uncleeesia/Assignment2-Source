@@ -1,0 +1,50 @@
+[
+  {
+    "Car": "Kona",
+    "Brand": "Hyundai",
+    "ShortDescription": "Short Introduction on Hyundai Kona Car, it should display a short description and not long description",
+    "ImgUrl": "./asset/hyundai_kona.jpg"
+  },
+  {
+    "Car": "Ioniq 5 N",
+    "Brand": "Hyundai",
+    "ShortDescription": "Short Introduction on Hyundai Ioniq 5 N, it should display a short description and not long description",
+    "ImgUrl": "./asset/Hyundai-Ioniq-5-N.jpg"
+  },
+  {
+    "Car": "iX xDrive40",
+    "Brand": "BMW",
+    "ShortDescription": "Short Introduction on BMW iX xDrive40, it should display a short description and not long description",
+    "ImgUrl": "./asset/BMW-iX-xDrive40.jpg"
+  },
+  {
+    "Car": "AMG EQE 43",
+    "Brand": "Mercedes",
+    "ShortDescription": "Short Introduction on Mercedes AMG EQE 43, it should display a short description and not long description",
+    "ImgUrl": "./asset/Mercedes-AMG-EQE-43.jpg"
+  },
+  {
+    "Car": "Elantra N",
+    "Brand": "Hyundai",
+    "ShortDescription": "Short Introduction on Hyundai Elantra N, it should display a short description and not long description",
+    "ImgUrl": "./asset/Hyundai-elantra-N.jpg"
+  },
+  {
+    "Car": "HR-V e: HEV",
+    "Brand": "Honda",
+    "ShortDescription": "Short Introduction on Honda HR-V e: HEV, it should display a short description and not long description",
+    "ImgUrl": "./asset/Honda-HR-V-e-HEV.jpg"
+  },
+  {
+    "Car": "Model S",
+    "Brand": "Tesla",
+    "ShortDescription": "Short Introduction on Tesla Model S, it should display a short description and not long description",
+    "ImgUrl": "./asset/Tesla-Model-S.jpg"
+  },
+  {
+    "Car": "Model X",
+    "Brand": "Tesla",
+    "ShortDescription": "Short Introduction on Tesla Model X, it should display a short description and not long description",
+    "ImgUrl": "./asset/Tesla-Model-X.jpg"
+  }
+]

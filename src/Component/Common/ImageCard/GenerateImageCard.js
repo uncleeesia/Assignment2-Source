@@ -1,6 +1,6 @@
-export function populateWhyChooseUs(PopulatingId, data) {
+export function populateImageCard(PopulatingId, data) {
   // Fetch the template HTML file
-  fetch("./src/component/Common/CardTemplate/CardTemplate.html")
+  fetch("./src/component/Common/ImageCard/ImageCard.html")
     .then((response) => response.text()) // Ensure you get the HTML as text
     .then((htmlData) => {
       // Create a temporary container to hold the fetched HTML
@@ -10,9 +10,7 @@ export function populateWhyChooseUs(PopulatingId, data) {
       );
 
       // Get the template element (make sure it's in the fetched content)
-      const template = templateContainer.querySelector(
-        "#why-choose-us-template"
-      );
+      const template = templateContainer.querySelector("#card-template");
 
       const container = document.getElementById(PopulatingId);
 
@@ -26,11 +24,21 @@ export function populateWhyChooseUs(PopulatingId, data) {
             // Clone the template content
             const templateClone = template.content.cloneNode(true);
             // Populate the template's elements
-            const titleElement = templateClone.querySelector(".feature");
-            const descriptionElement = templateClone.querySelector(".title");
+            const ImgElement = templateClone.querySelector("img");
+            const hrefElement = templateClone.querySelector("a");
+            const brandElement = templateClone.querySelector("small");
+            const titleElement = templateClone.querySelector(".card-title");
+            const descriptionElement =
+              templateClone.querySelector(".card-text");
 
-            titleElement.textContent = feature.title;
-            descriptionElement.textContent = feature.description;
+            hrefElement.href = `./Selected.html?Brand=${feature.Brand}&CarModel=${feature.Car.replace(
+              / /g,
+              "-"
+            )}`;
+            titleElement.textContent = feature.Car;
+            descriptionElement.textContent = feature.ShortDescription;
+            if (feature.ImgUrl) ImgElement.src = feature.ImgUrl;
+            brandElement.textContent = `- ${feature.Brand}`;
 
             // Append the cloned and populated template to the container
             container.appendChild(templateClone);
@@ -42,4 +50,4 @@ export function populateWhyChooseUs(PopulatingId, data) {
 }
 
 // Call the function to populate the template when the page is ready
-populateWhyChooseUs();
+populateImageCard();
