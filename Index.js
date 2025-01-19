@@ -11,10 +11,12 @@ fetch("./src/component/Common/NavBar/LogIn/Login.html")
   )
   .then(() => {
     const isLoggedIn = localStorage.getItem("user") !== null;
-    const hideBtn = window.location.href.includes("SignIn.html") && !isLoggedIn;
+    const hideBtn =
+      window.location.href.toLowerCase().includes("signin") && !isLoggedIn;
+
     document.getElementById("login").classList.toggle("d-none", isLoggedIn);
     document.getElementById("logout").classList.toggle("d-none", !isLoggedIn);
-    document.getElementById("login").classList.toggle("d-none",hideBtn);
+    document.getElementById("login").classList.toggle("d-none", hideBtn);
     document.getElementById("login").addEventListener("click", () => {
       localStorage.removeItem("user");
       location.reload();
