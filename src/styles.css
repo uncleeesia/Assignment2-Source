@@ -178,6 +178,24 @@ footer a:hover {
   color: #ffdd57;
 }
 
+.card-body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: auto; /* Keep vertical scrollbar */
+}
+
+.card-body::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Make the scrollbar thumb rounded */
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   nav {

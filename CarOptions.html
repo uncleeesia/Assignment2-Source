@@ -58,12 +58,12 @@
       </div>
     </header>
     <!-- Main Content -->
-    <main class="container-fluid p-4">
+    <main class="container-fluid d-flex justify-content-center p-4">
       <div class="container-fluid row justify-content-around">
-        <div
-          class="row col-lg-12 col-md-12 col-sm-12 justify-content-start justify-content-md-center justify-content-sm-center"
-        >
-          <div class="container row col-lg-9 col-md-12 col-sm-12 justify-content-center">
+        <div class="row col-lg-12 col-md-12 col-sm-12 justify-content-center">
+          <div
+            class="container row col-lg-9 col-md-12 col-sm-12 justify-content-center"
+          >
             <div
               id="search-container"
               class="form-group row col-lg-6 col-md-6 col-sm-12 justify-content-center"
@@ -78,7 +78,10 @@
               />
               <datalist id="list-car-brands"></datalist>
             </div>
-            <div id="dropdownCarBrand" class="dropdown col-lg-2 col-md-3 col-sm-6">
+            <div
+              id="dropdownCarBrand"
+              class="dropdown col-lg-2 col-md-3 col-sm-6"
+            >
               <button
                 class="btn btn-secondary dropdown-toggle col-12"
                 type="button"
@@ -89,14 +92,16 @@
               >
                 Select Car Brand
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              </div>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
             </div>
           </div>
         </div>
         <div
           id="CarOption-Container"
-          class="row mt-5 p-0 col-lg-9 col-md-12 col-sm-12 justify-content-lg-around justify-content-md-center"
+          class="d-flex flex-wrap justify-content-around mt-4 col-lg-9 col-md-12 col-sm-12"
         ></div>
       </div>
     </main>
