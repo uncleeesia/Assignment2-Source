@@ -25,7 +25,7 @@ export function populateFeedback(PopulatingId, data) {
             const pAuthor = templateClone.querySelectorAll("p")[1];
 
             pText.textContent = feedback.text;
-            pAuthor.textContent = feedback.author;
+            pAuthor.textContent = `- ${feedback.author}`;
 
             container.appendChild(templateClone);
           }
