@@ -1,7 +1,7 @@
 import { populateImageCard } from "../Common/ImageCard/GenerateImageCard.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("./src/Component/PopulateCarOptions/PopulateCarOptionsData.json")
+  fetch("../mockData/PopulateCarOptionsData.json")
     .then((response) => response.json())
     .then((data) => {
       const inputField = document.getElementById("input-datalist");
