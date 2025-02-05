@@ -1,14 +1,14 @@
 [
   {
-    "title": "New York",
-    "description": "123 Main St, New York, NY"
+    "title": "Changi",
+    "description": "80 Airport Boulevard, Singapore 819642"
   },
   {
-    "title": "Los Angeles",
-    "description": "456 Sunset Blvd, Los Angeles, CA"
+    "title": "Ubi",
+    "description": "1 Ubi Avenue 3, Singapore 408857"
   },
   {
-    "title": "Chicago",
-    "description": "789 Lake Shore Dr, Chicago, IL"
+    "title": "Bukit Batok",
+    "description": "10 Bukit Batok Crescent, Singapore 658079"
   }
 ]

@@ -21,10 +21,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         !!localStorage.getItem("carRentalEmailLogin") &&
         !!localStorage.getItem("carRentalPasswordLogin");
 
-      console.log(
-        document.getElementById("login").classList.value.includes("d-none")
-      );
-
       document
         .getElementById("login")
         .classList.toggle(

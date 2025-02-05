@@ -161,6 +161,27 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.status-badge {
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+.inspection-card {
+  border-left: 4px solid #17a2b8;
+}
+.car-image {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.spec-list dt {
+  color: #6c757d;
+  font-weight: 400;
+}
+.spec-list dd {
+  font-weight: 500;
+}
+
 /* Footer */
 footer {
   background-color: #333;

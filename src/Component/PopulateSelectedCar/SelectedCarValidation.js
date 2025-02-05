@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         alert("You must be logged in to reserve a car.");
         window.location.href = "SignIn.html";
       } else {
-        window.location.href = `Payment.html`;
+        window.location.href = `Summary.html`;
       }
     }
   });
