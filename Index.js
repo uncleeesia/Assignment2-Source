@@ -21,11 +21,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
         !!localStorage.getItem("carRentalEmailLogin") &&
         !!localStorage.getItem("carRentalPasswordLogin");
 
+      console.log(
+        document.getElementById("login").classList.value.includes("d-none")
+      );
+
       document
         .getElementById("login")
         .classList.toggle(
           "d-none",
-          (!localExist && hideBtn) || (localExist && !hideBtn)
+          (localExist && !hideBtn) ||
+            (!localExist && hideBtn) ||
+            (!document
+              .getElementById("login")
+              .classList.value.includes("d-none") &&
+              hideBtn)
         );
       document
         .getElementById("logout")

@@ -15,12 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("../mockData/PopulateCarOptionsData.json")
     .then((response) => response.text())
     .then((data) => {
-      // Get the URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
+      var urlParams = new URLSearchParams(window.location.search);
+      var brandParams = urlParams.get("Brand");
+      var carModelParams = urlParams.get("CarModel");
 
-      // Retrieve values
-      const brandParams = urlParams.get("Brand").toLowerCase();
-      const carModelParams = urlParams.get("CarModel").toLowerCase();
+      if (!brandParams && !!localStorage.getItem("carBrand")) {
+        urlParams.set("Brand", localStorage.getItem("carBrand"));
+        urlParams.set("CarModel", localStorage.getItem("carModel"));
+        brandParams = urlParams.get("Brand").toLowerCase();
+        carModelParams = urlParams.get("CarModel").toLowerCase();
+      } else if (!!brandParams) {
+        brandParams = urlParams.get("Brand").toLowerCase();
+        carModelParams = urlParams.get("CarModel").toLowerCase();
+      } else {
+        brandParams = localStorage.getItem("carBrand");
+        carModelParams = localStorage.getItem("carModel");
+      }
+      if (!!brandParams) {
+        localStorage.setItem("carBrand", brandParams);
+        localStorage.setItem("carModel", carModelParams);
+      }
+
       var filteredData = JSON.parse(data).filter(
         (x) =>
           x.brand.toLowerCase() == brandParams &&
@@ -28,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       filteredData.forEach((carData) => {
-        // Get elements by ID
         const imgUrl = document.getElementById("imgUrl");
         const carModel = document.getElementById("carModel");
         const carBrand = document.getElementById("carBrand");
