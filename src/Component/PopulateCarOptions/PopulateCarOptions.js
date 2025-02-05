@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const brandModelsMap = new Map();
 
       data.forEach((car) => {
-        carBrandsSet.add(car.Brand);
-        if (!brandModelsMap.has(car.Brand)) {
-          brandModelsMap.set(car.Brand, []);
+        carBrandsSet.add(car.brand);
+        if (!brandModelsMap.has(car.brand)) {
+          brandModelsMap.set(car.brand, []);
         }
-        brandModelsMap.get(car.Brand).push(car.Car);
+        brandModelsMap.get(car.brand).push(car.car);
       });
 
       const carBrands = Array.from(carBrandsSet).sort();
@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Populate datalist
       data.forEach((car) => {
         const option = document.createElement("option");
-        option.label = car.Brand;
-        option.value = car.Car;
+        option.label = car.brand;
+        option.value = car.car;
         datalist.appendChild(option);
       });
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Filter by brand if not "All"
         if (selectedBrand !== "All") {
           filteredData = brandModelsMap.has(selectedBrand)
-            ? filteredData.filter((car) => car.Brand === selectedBrand)
+            ? filteredData.filter((car) => car.brand === selectedBrand)
             : [];
         }
 
@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const query = searchQuery.toLowerCase();
           filteredData = filteredData.filter(
             (car) =>
-              car.Brand.toLowerCase().includes(query) ||
-              car.Car.toLowerCase().includes(query)
+              car.brand.toLowerCase().includes(query) ||
+              car.car.toLowerCase().includes(query)
           );
         }
 

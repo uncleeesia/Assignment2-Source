@@ -10,9 +10,7 @@ export function populateWhyChooseUs(PopulatingId, data) {
       );
 
       // Get the template element (make sure it's in the fetched content)
-      const template = templateContainer.querySelector(
-        "#card-template"
-      );
+      const template = templateContainer.querySelector("#card-template");
 
       const container = document.getElementById(PopulatingId);
 
@@ -26,8 +24,29 @@ export function populateWhyChooseUs(PopulatingId, data) {
             // Clone the template content
             const templateClone = template.content.cloneNode(true);
             // Populate the template's elements
+            const div = templateClone.querySelector(".informationCard");
             const titleElement = templateClone.querySelector(".feature");
             const descriptionElement = templateClone.querySelector(".title");
+
+            switch (feature.type) {
+              case "1":
+                div.classList.add("pt-3", "col-lg-3", "col-md-12", "col-sm-12");
+                break;
+              case "2":
+                div.classList.add("pt-3", "col-lg-5", "col-md-12", "col-sm-12");
+                break;
+              case "3":
+                div.classList.add("pt-3", "col-lg-3", "col-md-12", "col-sm-12");
+                break;
+              case "4":
+                div.classList.add("pt-3", "col-lg-3", "col-md-12", "col-sm-12");
+                break;
+              default:
+                div.classList.add("pt-3", "col-lg-3", "col-md-12", "col-sm-12");
+            }
+            if (["4", "3"].includes(feature.type)) {
+              div.classList.add("pt-3", "col-lg-3", "col-md-12", "col-sm-12");
+            }
 
             titleElement.textContent = feature.title;
             descriptionElement.textContent = feature.description;

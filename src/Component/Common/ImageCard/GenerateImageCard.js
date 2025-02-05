@@ -31,14 +31,14 @@ export function populateImageCard(PopulatingId, data) {
             const descriptionElement =
               templateClone.querySelector(".card-text");
 
-            hrefElement.href = `./Selected.html?Brand=${feature.Brand}&CarModel=${feature.Car.replace(
+            hrefElement.href = `./Selected.html?Brand=${feature.brand}&CarModel=${feature.car.replace(
               / /g,
               "-"
             )}`;
-            titleElement.textContent = feature.Car;
-            descriptionElement.textContent = feature.ShortDescription;
-            if (feature.ImgUrl) ImgElement.src = feature.ImgUrl;
-            brandElement.textContent = `- ${feature.Brand}`;
+            titleElement.textContent = feature.car;
+            descriptionElement.textContent = feature.shortDescription;
+            if (feature.imgUrl) ImgElement.src = feature.imgUrl;
+            brandElement.textContent = `- ${feature.brand}`;
 
             // Append the cloned and populated template to the container
             container.appendChild(templateClone);
