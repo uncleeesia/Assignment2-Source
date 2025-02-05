@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         sessionStorage.setItem("sessionCarRentalEmailLogin", passwordInput);
       }
       localStorage.setItem("carRentalEmailLogin", emailInput);
-      localStorage.setItem("carRentalPasswordLogin", passwordInput);
+      localStorage.setItem("carRentalPasswordLogin", encodeURI(btoa(passwordInput)));
 
       window.location.href = "Index.html";
     });
