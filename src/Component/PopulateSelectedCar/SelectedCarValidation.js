@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const returnDateInput = document.getElementById("return-date");
   const creditCardInput = document.getElementById("credit-card");
 
-  function validateReturnDate() {
-    const pickupDate = new Date(pickupDateInput.value);
-    const returnDate = new Date(returnDateInput.value);
+  function validateReturnDate(_pickupDateInput, _returnDateInput) {
+    const pickupDate = new Date(_pickupDateInput);
+    const returnDate = new Date(_returnDateInput);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -48,12 +48,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   pickupDateInput.addEventListener("change", (e) => {
     localStorage.setItem("pickupDate", e.target.value);
-    return validateReturnDate;
+    var returnDate = localStorage.getItem("returnDate");
+    return validateReturnDate(e.target.value, returnDate);
   });
 
   returnDateInput.addEventListener("change", (e) => {
+    var pickupDate = localStorage.getItem("pickupDate");
     localStorage.setItem("returnDate", e.target.value);
-    return validateReturnDate;
+    return validateReturnDate(pickupDate, e.target.value);
   });
 
   var localExist =
