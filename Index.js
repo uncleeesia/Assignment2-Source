@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     });
 
-  if (window.location.pathname == "/SignIn.html") {
+  if (window.location.href.toLowerCase().includes("signin")) {
     let checked = false;
 
     document.getElementById("checkBox").addEventListener("click", (e) => {
