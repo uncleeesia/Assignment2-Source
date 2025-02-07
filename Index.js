@@ -76,7 +76,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
       localStorage.setItem("carRentalEmailLogin", emailInput);
       localStorage.setItem("carRentalPasswordLogin", encodeURI(btoa(passwordInput)));
 
-      window.location.href = "Index.html";
+      const storedBrand = localStorage.getItem("carBrand");
+      const storedModel = localStorage.getItem("carModel");
+      
+      if(storedBrand && storedModel){
+        window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+      }
+      else{
+        window.location.href = "Index.html";
+      }
     });
   }
 });
