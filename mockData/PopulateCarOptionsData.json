@@ -5,13 +5,26 @@
     "shortDescription": "A compact SUV with a stylish design, advanced safety features, and efficient performance.",
     "imgUrl": "./asset/hyundai_kona.jpg",
     "specifications": {
-      "range": "Up to 258 miles",
+      "range": "258 miles",
       "horsepower": "201 HP",
       "zeroToSixty": "7.6 seconds",
       "chargingTime": "10-80% in 47 minutes (Fast Charging)",
       "seatingCapacity": 5,
       "driveType": "Front-Wheel Drive (FWD)"
-    }
+    },
+    "rentalStatus": {
+      "availability": "Available Now",
+      "lastUpdated": "3 hours ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "12 Feb 2025",
+      "currentLocation": "Changi Airport Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Minor scratches on rear bumper",
+      "mileage": "8,942 km",
+      "batteryHealth": "96%"
+    },
+     "pricePerDay": "$80.00"
   },
   {
     "car": "Ioniq-5-N",
@@ -19,13 +32,26 @@
     "shortDescription": "A high-performance electric crossover offering sporty dynamics and cutting-edge technology.",
     "imgUrl": "./asset/Hyundai-Ioniq-5-N.jpg",
     "specifications": {
-      "range": "Up to 300 miles",
+      "range": "300 miles",
       "horsepower": "601 HP",
       "zeroToSixty": "3.4 seconds",
       "chargingTime": "10-80% in 18 minutes (Ultra-Fast Charging)",
       "seatingCapacity": 5,
       "driveType": "All-Wheel Drive (AWD)"
-    }
+    },
+    "rentalStatus": {
+      "availability": "New Arrival",
+      "lastUpdated": "1 hour ago",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": "Downtown Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Brand New",
+      "mileage": "15 km",
+      "batteryHealth": "100%"
+    },
+     "pricePerDay": "$120.00"
   },
   {
     "car": "iX-xDrive40",
@@ -33,13 +59,31 @@
     "shortDescription": "A luxury all-electric SUV with futuristic design, premium comfort, and intelligent driving features.",
     "imgUrl": "./asset/BMW-iX-xDrive40.jpg",
     "specifications": {
-      "range": "Up to 257 miles",
+      "range": "236-264 miles",
       "horsepower": "322 HP",
       "zeroToSixty": "6.1 seconds",
-      "chargingTime": "10-80% in 31 minutes (Fast Charging)",
+      "chargingTime": "10-80% in 40 minutes",
       "seatingCapacity": 5,
       "driveType": "All-Wheel Drive (AWD)"
-    }
+    },
+    "rentalStatus": {
+      "availability": "Available Now",
+      "lastUpdated": "2 hours ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "15 Feb 2025",
+      "currentLocation": "Downtown Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "No damages reported",
+      "mileage": "12,345 km",
+      "batteryHealth": "98%"
+    },
+    "previousRental": {
+      "renter": "John Doe",
+      "duration": "3 Days",
+      "returnDate": "10 Feb 2025"
+    },
+     "pricePerDay": "$180.00"
   },
   {
     "car": "AMG-EQE-43",
@@ -47,41 +91,112 @@
     "shortDescription": "A performance-focused electric sedan combining AMG power with advanced electric mobility.",
     "imgUrl": "./asset/Mercedes-AMG-EQE-43.jpg",
     "specifications": {
-      "range": "Up to 260 miles",
+      "range": "260 miles",
       "horsepower": "469 HP",
       "zeroToSixty": "4.2 seconds",
       "chargingTime": "10-80% in 32 minutes (Fast Charging)",
       "seatingCapacity": 5,
       "driveType": "All-Wheel Drive (AWD)"
-    }
+    },
+    "rentalStatus": {
+      "availability": "Rented Out",
+      "lastUpdated": "1 hour ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "20 Feb 2025",
+      "currentLocation": "Jurong West Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "No damages reported",
+      "mileage": "5,678 km",
+      "batteryHealth": "99%"
+    },
+    "previousRental": {
+      "renter": "David Lim",
+      "duration": "7 Days",
+      "returnDate": "15 Feb 2025"
+    },
+     "pricePerDay": "$170.00"
   },
   {
-    "car": "Elantra-N",
-    "brand": "Hyundai",
-    "shortDescription": "A sporty sedan with turbocharged performance, aggressive styling, and track-ready features.",
-    "imgUrl": "./asset/Hyundai-elantra-N.jpg",
+    "car": "Polestar 2",
+    "brand": "Polestar",
+    "shortDescription": "A sleek, all-electric fastback with Scandinavian design and high-performance capabilities.",
+    "imgUrl": "./asset/Polestar-2.jpg",
     "specifications": {
-      "range": "Not Applicable (Gasoline)",
-      "horsepower": "276 HP",
-      "zeroToSixty": "5.3 seconds",
-      "chargingTime": "Not Applicable",
+      "range": "300 miles",
+      "horsepower": "408 HP",
+      "zeroToSixty": "4.5 seconds",
+      "chargingTime": "10-80% in 35 minutes (Fast Charging)",
       "seatingCapacity": 5,
-      "driveType": "Front-Wheel Drive (FWD)"
-    }
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "New Arrival",
+      "lastUpdated": "Just Now",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": "Orchard Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Brand New",
+      "mileage": "10 km",
+      "batteryHealth": "100%"
+    },
+     "pricePerDay": "$80.00"
   },
   {
-    "car": "HR-V-e-HEV",
-    "brand": "Honda",
-    "shortDescription": "A fuel-efficient hybrid SUV offering a spacious interior and smooth driving experience.",
-    "imgUrl": "./asset/Honda-HR-V-e-HEV.jpg",
+    "car": "Lucid Air",
+    "brand": "Lucid",
+    "shortDescription": "A premium electric sedan with groundbreaking range and ultra-fast charging.",
+    "imgUrl": "./asset/Lucid-Air.jpg",
     "specifications": {
-      "range": "Not Applicable (Hybrid)",
-      "horsepower": "129 HP",
-      "zeroToSixty": "9.6 seconds",
-      "chargingTime": "Self-Charging Hybrid",
+      "range": "516 miles",
+      "horsepower": "933 HP",
+      "zeroToSixty": "2.7 seconds",
+      "chargingTime": "10-80% in 20 minutes (Ultra-Fast Charging)",
       "seatingCapacity": 5,
-      "driveType": "Front-Wheel Drive (FWD)"
-    }
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available Now",
+      "lastUpdated": "30 minutes ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "17 Feb 2025",
+      "currentLocation": "Tampines Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "No damages reported",
+      "mileage": "3,210 km",
+      "batteryHealth": "98%"
+    },
+     "pricePerDay": "$180.00"
+  },
+  {
+    "car": "Porsche Taycan 4S",
+    "brand": "Porsche",
+    "shortDescription": "A high-performance luxury electric sedan with cutting-edge technology and handling.",
+    "imgUrl": "./asset/Porsche-Taycan-4S.jpg",
+    "specifications": {
+      "range": "288 miles",
+      "horsepower": "522 HP",
+      "zeroToSixty": "3.8 seconds",
+      "chargingTime": "10-80% in 22 minutes (Supercharging)",
+      "seatingCapacity": 4,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "New Arrival",
+      "lastUpdated": "Just Now",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": "Bukit Timah Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Brand New",
+      "mileage": "8 km",
+      "batteryHealth": "100%"
+    },
+     "pricePerDay": "$210.00"
   },
   {
     "car": "Model-S",
@@ -89,13 +204,26 @@
     "shortDescription": "A premium electric sedan with impressive range, autopilot capabilities, and rapid acceleration.",
     "imgUrl": "./asset/Tesla-Model-S.jpg",
     "specifications": {
-      "range": "Up to 405 miles",
+      "range": "405 miles",
       "horsepower": "670 HP",
       "zeroToSixty": "3.1 seconds",
       "chargingTime": "10-80% in 30 minutes (Supercharging)",
       "seatingCapacity": 5,
       "driveType": "All-Wheel Drive (AWD)"
-    }
+    },
+    "rentalStatus": {
+      "availability": "New Arrival",
+      "lastUpdated": "Just Now",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": "Tampines Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Brand New",
+      "mileage": "10 km",
+      "batteryHealth": "100%"
+    },
+     "pricePerDay": "$170.00"
   },
   {
     "car": "Model-X",
@@ -103,12 +231,30 @@
     "shortDescription": "A luxury electric SUV with falcon-wing doors, long-range capabilities, and high-tech features.",
     "imgUrl": "./asset/Tesla-Model-X.jpg",
     "specifications": {
-      "range": "Up to 348 miles",
+      "range": "348 miles",
       "horsepower": "670 HP",
       "zeroToSixty": "3.8 seconds",
       "chargingTime": "10-80% in 30 minutes (Supercharging)",
       "seatingCapacity": 7,
       "driveType": "All-Wheel Drive (AWD)"
-    }
+    },
+    "rentalStatus": {
+      "availability": "Rented Out",
+      "lastUpdated": "30 minutes ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "18 Feb 2025",
+      "currentLocation": "Tampines Branch"
+    },
+    "inspectionReport": {
+      "vehicleCondition": "No damages reported",
+      "mileage": "9,500 km",
+      "batteryHealth": "95%"
+    },
+    "previousRental": {
+      "renter": "Rachel Tan",
+      "duration": "5 Days",
+      "returnDate": "13 Feb 2025"
+    },
+    "pricePerDay": "$160.00"
   }
 ]
