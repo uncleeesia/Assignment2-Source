@@ -184,9 +184,9 @@ h2 {
   border-left: 4px solid #17a2b8;
 }
 .car-image {
-  height: 300px;
+  height: 500px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 .spec-list dt {
   color: #6c757d;
