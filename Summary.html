@@ -74,14 +74,14 @@
         <div class="col-md-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
-              <div class="row justify-content-around text-center">
-                <div class="col-8">
+              <div class="d-flex justify-content-between">
+                <div>
                   <h2 id="summaryCarModel" style="color: #555 !important;">
                     Car Model
                   </h2>
                   <p id="summaryCarBrand" class="mb-3 text-muted">Default</p>
                 </div>
-                <div class="col-4-lg">
+                <div>
                   <p id="summaryPricePerDay" class="alert alert-success"></p>
                 </div>
               </div>
@@ -200,22 +200,17 @@
                   >
                   <span id="summaryReturnDate" class="float-right"></span>
                 </li>
-                <div>
-                  <strong style="color: #555 !important;"
-                    >Initial Deposit</strong
+                <li class="mb-3">
+                  <strong
+                    >Total Duration Of Trip
+                    <span class="text-muted"></span>:</strong
                   >
-                  <li class="mb-3">
-                    <strong>Total Price:</strong>
-                    <span id="summaryTotalPrice" class="float-right"></span>
-                  </li>
-                  <li class="mb-3">
-                    <strong
-                      >Deposit
-                      <span class="text-muted">(60% Of Total Price)</span>:
-                    </strong>
-                    <span id="summaryDeposit" class="float-right"></span>
-                  </li>
-                </div>
+                  <span id="summaryTotalDuration" class="float-right"></span>
+                </li>
+                <li class="mb-3">
+                  <strong>Total Price:</strong>
+                  <span id="summaryTotalPrice" class="float-right"></span>
+                </li>
               </ul>
             </div>
           </div>

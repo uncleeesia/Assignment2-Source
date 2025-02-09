@@ -6,7 +6,7 @@
 body {
   line-height: 1.6;
   color: #333;
-  background-color: #b9b7bd;
+  background-color: #b9b7bd !important;
 }
 
 a {
@@ -57,7 +57,6 @@ nav a:hover {
 
 form {
   font-family: Arial, sans-serif;
-  background-color: #b9b7bd;
 }
 
 button {

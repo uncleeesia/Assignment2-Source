@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("backButton").addEventListener("click", (e) => {
-    console.log(localStorage.getItem("selectedCar"));
     localStorage.removeItem("selectedCar");
     window.location.href = "./Selected.html";
   });
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const pickUpDate = document.getElementById("summaryPickUpDate");
         const returnDate = document.getElementById("summaryReturnDate");
         const totalPrice = document.getElementById("summaryTotalPrice");
-        const depositPrice = document.getElementById("summaryDeposit");
         const mileage = document.getElementById("summaryMileage");
         const batteryHealth = document.getElementById("summaryBatteryHealth");
         const previousReturnDate = document.getElementById(
@@ -57,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const previousDuration = document.getElementById(
           "summaryPreviousDuration"
         );
+        const totalDuration = document.getElementById("summaryTotalDuration");
+        const caltotalPrice = calculateTotalPrice(carData.pricePerDay);
 
         imgUrl.src = carData.imgUrl;
         lastUpdated.innerHTML = `<strong>Last updated: </strong>${carData.rentalStatus.lastUpdated}`;
@@ -75,8 +75,19 @@ document.addEventListener("DOMContentLoaded", () => {
         returnLocation.innerHTML = `${localStorage.getItem("returnLocation")}`;
         pickUpDate.innerHTML = `${localStorage.getItem("pickupDate")}`;
         returnDate.innerHTML = `${localStorage.getItem("returnDate")}`;
-        totalPrice.innerHTML = `$${calculateTotalPrice(carData.pricePerDay)}`;
-        depositPrice.innerHTML = `<strong>$${(calculateTotalPrice(carData.pricePerDay)*0.6).toFixed(2)}</strong>`;
+        totalDuration.innerHTML = `${calculateTotalDuration()} Day(s)`;
+        totalPrice.innerHTML = `$${caltotalPrice}`;
+        localStorage.setItem(
+          "paymentDetails",
+          JSON.stringify({
+            "insurancePrice": parseFloat(carData.insurancePrice.split("$")[1]).toFixed(
+              2
+            ),
+            "total": caltotalPrice,
+            "duration": calculateTotalDuration(),
+          })
+        );
+
         vehicleCondition.innerHTML = `${carData.inspectionReport.vehicleCondition}`;
         mileage.innerHTML = `${carData.inspectionReport.mileage}`;
         batteryHealth.innerHTML = `${carData.inspectionReport.batteryHealth}`;
@@ -91,11 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 function calculateTotalPrice(rentalPrice = 0) {
   var price = rentalPrice.split("$")[1];
-  const start = new Date(localStorage.getItem("pickupDate"));
-  const end = new Date(localStorage.getItem("returnDate"));
 
   // Calculate the difference in millisecnds
-  var diffInMs = (end - start) / (1000 * 60 * 60 * 24);
-
+  var diffInMs = calculateTotalDuration();
   return `${(price * (diffInMs + 1)).toFixed(2)}`;
+}
+
+function calculateTotalDuration() {
+  const start = new Date(localStorage.getItem("pickupDate"));
+  const end = new Date(localStorage.getItem("returnDate"));
+  // Calculate the difference in millisecnds
+  var diffInMs = (end - start) / (1000 * 60 * 60 * 24);
+  return diffInMs <= 0 ? 1 : diffInMs;
 }

@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const reservationForm = document.getElementById("reservation-form");
   const pickupDateInput = document.getElementById("pickup-date");
   const returnDateInput = document.getElementById("return-date");
-  const creditCardInput = document.getElementById("credit-card");
   const returnLocationDropdown = document.getElementById("returnLocation");
 
   function validateReturnDate(_pickupDateInput, _returnDateInput) {
@@ -26,23 +25,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     } else {
       returnDateInput.setCustomValidity("");
       pickupDateInput.setCustomValidity("");
-      return true;
-    }
-  }
-
-  function validateCreditCard() {
-    const creditCardNumber = creditCardInput.value.replace(/[\s-]/g, ""); // Remove spaces and hyphens
-    const creditCardPattern = /^\d{16}$/; // 16 digits only
-
-    if (!creditCardPattern.test(creditCardNumber)) {
-      creditCardInput.setCustomValidity(
-        "Please enter a valid 16-digit credit card number."
-      );
-      creditCardInput.reportValidity();
-      return false;
-    } else {
-      creditCardInput.setCustomValidity("");
-      creditCardInput.reportValidity();
       return true;
     }
   }

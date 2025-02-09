@@ -28,6 +28,7 @@
       "mileage": "8,942 km",
       "batteryHealth": "96%"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$80.00"
   },
   {
@@ -59,6 +60,7 @@
       "mileage": "0 km",
       "batteryHealth": "100%"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$120.00"
   },
   {
@@ -95,6 +97,7 @@
       "duration": "3 Days",
       "returnDate": "10 Feb 2025"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$180.00"
   },
   {
@@ -131,6 +134,7 @@
       "duration": "7 Days",
       "returnDate": "15 Feb 2025"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$170.00"
   },
   {
@@ -162,6 +166,7 @@
       "mileage": "10 km",
       "batteryHealth": "100%"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$80.00"
   },
   {
@@ -193,6 +198,7 @@
       "mileage": "3,210 km",
       "batteryHealth": "98%"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$180.00"
   },
   {
@@ -213,7 +219,10 @@
       "lastUpdated": "Just Now",
       "reservation": "Not Yet Rented",
       "nextAvailability": "Immediate",
-      "currentLocation": "Bukit Timah Branch"
+      "currentLocation": {
+        "title": "Ubi",
+        "description": "1 Ubi Avenue 3, Singapore 408857"
+      }
     },
     "inspectionReport": {
       "vehicleCondition": "New",
@@ -221,6 +230,7 @@
       "mileage": "8 km",
       "batteryHealth": "100%"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$210.00"
   },
   {
@@ -252,6 +262,7 @@
       "mileage": "10 km",
       "batteryHealth": "100%"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$170.00"
   },
   {
@@ -288,6 +299,7 @@
       "duration": "5 Days",
       "returnDate": "15 Feb 2025"
     },
+    "insurancePrice": "$30",
     "pricePerDay": "$180.00"
   }
 ]
