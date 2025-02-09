@@ -1,15 +1,12 @@
 /* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
   color: #333;
+  background-color: #b9b7bd;
 }
 
 a {
@@ -19,35 +16,57 @@ a {
 
 /* Header and Navigation */
 header {
-  background-color: #1e90ff;
-  color: #fff;
+  background-color: #868b8e;
+  color: #eeede7;
   padding: 1.5rem 0;
   text-align: center;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
 nav a {
-  color: #fff;
+  color: #e7d2cc;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 nav a:hover {
-  background-color: #ff8c42;
+  background-color: #b9b7bd;
+  color: #eeede7;
 }
 
+#login,
+#logout {
+  border-radius: 10px;
+  color: #e7d2cc;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  background-color: transparent;
+}
+
+#login:hover,
+#logout:hover {
+  background-color: #b9b7bd;
+  color: #eeede7;
+}
+
+form {
+  font-family: Arial, sans-serif;
+  background-color: #b9b7bd;
+}
+
+button {
+  background-color: #c8e0f4;
+}
 /* Main Content */
 main {
   padding: 2rem;
+  background-color: #b9b7bd !important;
 }
 
 section {
@@ -58,7 +77,7 @@ h2 {
   margin-bottom: 1.5rem;
   font-size: 2rem;
   text-align: center;
-  color: #1e90ff;
+  color: #fffafa !important;
 }
 
 /* Why Choose Us Section */
@@ -88,15 +107,11 @@ h2 {
 
 /* Promotion Section */
 .promotion {
-  background-color: #ff8c42;
-  color: #fff;
+  background-color: #eeede7;
+  color: #585859;
   padding: 2rem;
   text-align: center;
   border-radius: 10px;
-}
-
-.promotion h2 {
-  color: #fff;
 }
 
 /* Customer Feedback Section */
@@ -108,7 +123,7 @@ h2 {
 }
 
 .feedback div {
-  background-color: #fff;
+  background-color: #fffafa !important;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -118,7 +133,6 @@ h2 {
 
 .feedback p {
   font-style: italic;
-  color: #555;
 }
 
 /* Rent Now Steps Section */
@@ -184,14 +198,14 @@ h2 {
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #031927;
   color: #fff;
   padding: 2rem;
   text-align: center;
 }
 
 footer a {
-  color: #ff8c42;
+  color: #ba1200;
   transition: color 0.3s;
 }
 
@@ -199,22 +213,27 @@ footer a:hover {
   color: #ffdd57;
 }
 
+.card {
+  background-color: #fffafa !important;
+  border-radius: 40px !important;
+}
+
 .card-body {
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: auto; /* Keep vertical scrollbar */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .card-body::-webkit-scrollbar {
-  width: 6px; /* Set the width of the scrollbar */
+  width: 6px;
 }
 
 .card-body::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar thumb */
-  border-radius: 10px; /* Make the scrollbar thumb rounded */
+  background: #888;
+  border-radius: 10px;
 }
 
 .card-body::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Darker color on hover */
+  background: #555;
 }
 
 /* Media Queries for Responsiveness */
@@ -223,14 +242,36 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
   }
-
-  .why-choose-us,
-  .rent-steps,
-  .locations {
-    grid-template-columns: 1fr;
-  }
-
   .feedback div {
     width: 100%;
   }
+}
+
+@keyframes ImageSlide {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.ImageSlide {
+  animation: ImageSlide 1.5s ease-out forwards;
+}
+
+.slideIn {
+  animation: slideIn 1.5s ease-out forwards;
 }

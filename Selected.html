@@ -45,13 +45,14 @@
       <h1>AZoom Car Rental</h1>
       <div class="container-fluid">
         <div id="navbar-placeholder"></div>
-        <div id="LogIn-placeholder"></div>
       </div>
     </header>
     <!-- Main Content -->
-    <main class="container-fluid pt-3 pb-5 px-5 bg-light">
+    <main class="container-fluid pt-3 pb-5 px-5">
       <!-- Car Reservation Section -->
-      <p class="text-center h1 m-0 mb-4 mt-0">Reserve Your Car</p>
+      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7;">
+        Reserve Your Car
+      </p>
       <section class="mb-5">
         <div class="row justify-content-around">
           <div class="col-md-7 align-self-center">
@@ -59,13 +60,34 @@
               id="imgUrl"
               src="https://placehold.co/600x400"
               alt="Car Image"
-              class="img-fluid rounded"
+              class="img-fluid ImageSlide mb-4"
+              style="border-radius: 40px;"
             />
+            <div class="row justify-content-around slideIn">
+              <span id="availability" class="mb-2">Status: </span>
+              <span id="vehicleCondition" class="mb-2">Condition: </span>
+              <span
+                id="currentLocation"
+                class="status-badge bg-success text-white mb-2"
+                >Current Location:
+              </span>
+            </div>
           </div>
-          <div class="col-md-4 mt-3">
-            <h3 id="carModel">Default</h3>
+          <div class="col-md-4 mt-3 slideIn">
+            <div
+              class="row justify-content-between"
+              style="padding-left: 13.4px;"
+            >
+              <h3 id="carModel">Default</h3>
+              <p
+                id="pricePerDay"
+                class="status-badge bg-success text-white"
+                style="color: #fffafa;"
+              >
+                Price / Day:
+              </p>
+            </div>
             <p id="carBrand" class="text-muted">Default</p>
-
             <!-- Short Description -->
             <div class="mb-4">
               <p id="shortDescription" class="font-italic">
@@ -90,6 +112,12 @@
             <!-- Reservation Form -->
             <form id="reservation-form">
               <div class="form-group">
+                <label for="returnLocation">Return Location</label>
+                <select class="form-control" id="returnLocation" required>
+                  <option value="">Select a location</option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="pickup-date">Pickup Date</label>
                 <input
                   type="date"
@@ -107,7 +135,9 @@
                   required
                 />
               </div>
-              <button type="submit" class="btn btn-primary">Reserve Now</button>
+              <button id="reserveBtn" type="submit" class="btn btn-primary">
+                Reserve Now
+              </button>
             </form>
           </div>
         </div>

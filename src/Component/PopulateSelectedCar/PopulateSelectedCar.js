@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
       var filteredData = JSON.parse(data).filter((x) => x.type == "2");
       populateWhyChooseUs("final-process-container", filteredData);
     });
+  fetch("../mockData/PopulateLocationData.json")
+  .then((response)=>response.json())
+  .then((data)=>{
+    const returnLocationDropdown = document.getElementById("returnLocation");
+
+    data.forEach(location => {
+        const option = document.createElement("option");
+        option.value = `${location.title}, ${location.description}`;
+        option.textContent = `${location.title}, ${location.description}`;
+        returnLocationDropdown.appendChild(option);
+    });
+  })
   fetch("../mockData/PopulateCarOptionsData.json")
     .then((response) => response.text())
     .then((data) => {
@@ -55,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const capacity = document.getElementById("Capacity");
         const driveType = document.getElementById("DriveType");
 
+        const availability = document.getElementById("availability");
+        const currentLocation = document.getElementById("currentLocation");
+        const vehicleCondition = document.getElementById("vehicleCondition");
+        const pricePerDay = document.getElementById("pricePerDay");
+
         imgUrl.src = carData.imgUrl;
         carModel.innerHTML = carData.car;
         carBrand.innerHTML = carData.brand;
@@ -66,6 +83,41 @@ document.addEventListener("DOMContentLoaded", () => {
         chargingTime.innerHTML = `<strong>Charging Time: </strong>${carData.specifications.chargingTime}`;
         capacity.innerHTML = `<strong>Seating Capacity: </strong>${carData.specifications.seatingCapacity}`;
         driveType.innerHTML = `<strong>Drive Type: </strong>${carData.specifications.driveType}`;
+        availability.innerHTML = `<strong>Status: </strong>${carData.rentalStatus.availability}`;
+        if (carData.rentalStatus.availability == "Available") {
+          availability.classList.add(
+            "status-badge",
+            "bg-success",
+            "text-white"
+          );
+        } else {
+          document.getElementById("reserveBtn").classList.toggle("d-none");
+          document.getElementById("reservation-form").classList.toggle("d-none");
+          availability.classList.add(
+            "status-badge",
+            "bg-warning",
+            "text-danger"
+          );
+        }
+
+        currentLocation.innerHTML = `<strong>Current Location: </strong>${carData.rentalStatus.currentLocation.title}, ${carData.rentalStatus.currentLocation.description}`;
+        if (
+          ["Good", "New"].includes(carData.inspectionReport.vehicleCondition)
+        ) {
+          vehicleCondition.classList.add(
+            "status-badge",
+            "bg-success",
+            "text-white"
+          );
+        } else {
+          vehicleCondition.classList.add(
+            "status-badge",
+            "bg-warning",
+            "text-danger"
+          );
+        }
+        vehicleCondition.innerHTML = `<strong style="color=#333 !important;">Condition: </strong>${carData.inspectionReport.vehicleCondition}`;
+        pricePerDay.innerHTML = `<strong>Price / Day: </strong>${carData.pricePerDay}`;
       });
     });
 });

@@ -1,24 +1,40 @@
 <template id="card-template">
   <a
-    class="customBorder col-xl-3 col-lg-4 col-md-5 col-sm-12 m-3 p-0"
+    class="customBorder col-xl-3 col-lg-5 col-md-6 col-sm-12 m-3 p-0"
     style="text-decoration: none;"
   >
-    <div class="p-1">
-      <section class="w-100" style="height: 26vh; margin: 0px 0px 1vh 0px;">
+    <div class="p-0" style="border-radius: 30px; background-color: #eeede7;">
+      <section
+        class="w-100"
+        style="
+          height: 26vh;
+          margin: 0px 0px 1vh 0px;
+          background-color: #eeede7;
+          border-radius: 30px;
+        "
+      >
         <img
-          class="card-img-top img-fluid h-100"
+          class="card-img-top img-fluid h-100 p-1"
           src="https://placehold.co/600x400"
           alt="Card image cap"
+          style="border-radius: 30px;"
         />
       </section>
       <section
         class="card-body"
-        style="height: 15vh; max-height: max-content; overflow: scroll;"
+        style="
+          height: 15vh;
+          max-height: max-content;
+          background-color: #eeede7;
+        "
       >
         <h5 class="card-title"></h5>
         <p class="card-text text-dark"></p>
       </section>
-      <section class="card-footer my-auto">
+      <section
+        class="card-footer my-auto"
+        style="border-radius: 50px;"
+      >
         <small class="text-muted"></small>
       </section>
     </div>

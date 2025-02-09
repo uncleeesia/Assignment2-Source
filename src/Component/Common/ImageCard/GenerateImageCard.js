@@ -1,29 +1,22 @@
 export function populateImageCard(PopulatingId, data) {
-  // Fetch the template HTML file
   fetch("./src/component/Common/ImageCard/ImageCard.html")
-    .then((response) => response.text()) // Ensure you get the HTML as text
+    .then((response) => response.text())
     .then((htmlData) => {
-      // Create a temporary container to hold the fetched HTML
       const templateContainer = new DOMParser().parseFromString(
         htmlData,
         "text/html"
       );
-
-      // Get the template element (make sure it's in the fetched content)
       const template = templateContainer.querySelector("#card-template");
-
       const container = document.getElementById(PopulatingId);
-
+      const windowWidth = window.innerWidth;
+      const cardsToShow = windowWidth >= 1200 ? 6 : windowWidth >= 1000 ? 4 : 2;
       if (template && container) {
-        // Ensure the features array is defined and contains data
         const features = data;
+        const hiddenElements = []; // Store elements to toggle on scroll
 
-        // Loop through the features and populate them
-        features.forEach((feature) => {
+        features.forEach((feature, index) => {
           if (feature) {
-            // Clone the template content
             const templateClone = template.content.cloneNode(true);
-            // Populate the template's elements
             const ImgElement = templateClone.querySelector("img");
             const hrefElement = templateClone.querySelector("a");
             const brandElement = templateClone.querySelector("small");
@@ -31,17 +24,39 @@ export function populateImageCard(PopulatingId, data) {
             const descriptionElement =
               templateClone.querySelector(".card-text");
 
-            hrefElement.href = `./Selected.html?Brand=${feature.brand}&CarModel=${feature.car.replace(
-              / /g,
-              "-"
-            )}`;
+            hrefElement.href = `./Selected.html?Brand=${
+              feature.brand
+            }&CarModel=${feature.car.replace(/ /g, "-")}`;
+
+            // Show first 3 elements, hide the rest
+            if (index >= cardsToShow) {
+              hrefElement.classList.add("d-none");
+              hiddenElements.push(hrefElement); // Store hidden elements
+            }
+
             titleElement.textContent = feature.car;
             descriptionElement.textContent = feature.shortDescription;
             if (feature.imgUrl) ImgElement.src = feature.imgUrl;
             brandElement.textContent = `- ${feature.brand}`;
 
-            // Append the cloned and populated template to the container
             container.appendChild(templateClone);
+          }
+        });
+
+        // Single global scroll event listener
+        let hasToggled = false;
+        window.addEventListener("scroll", () => {
+          if (hasToggled) return; // Prevent multiple triggers
+
+          let scrollPosition = window.scrollY;
+          let togglePosition = 30; // Adjust as needed
+
+          if (scrollPosition > togglePosition) {
+            hiddenElements.forEach((el) => {
+              el.classList.remove("d-none");
+              el.classList.add("ImageSlide"); // Add animation class
+            });
+            hasToggled = true; // Prevent re-executing
           }
         });
       }
@@ -49,5 +64,5 @@ export function populateImageCard(PopulatingId, data) {
     .catch((error) => console.error("Error loading template:", error));
 }
 
-// Call the function to populate the template when the page is ready
+// Call function to populate cards
 populateImageCard();

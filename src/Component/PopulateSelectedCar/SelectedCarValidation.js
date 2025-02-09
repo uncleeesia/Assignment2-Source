@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const pickupDateInput = document.getElementById("pickup-date");
   const returnDateInput = document.getElementById("return-date");
   const creditCardInput = document.getElementById("credit-card");
+  const returnLocationDropdown = document.getElementById("returnLocation");
 
   function validateReturnDate(_pickupDateInput, _returnDateInput) {
     const pickupDate = new Date(_pickupDateInput);
@@ -58,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
     return validateReturnDate(pickupDate, e.target.value);
   });
 
+  returnLocationDropdown.addEventListener("change", (e) => {
+    localStorage.setItem("returnLocation", e.target.value);
+  });
+
   var localExist =
     !!localStorage.getItem("carRentalEmailLogin") &&
     !!localStorage.getItem("carRentalPasswordLogin");
@@ -65,8 +70,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   reservationForm.addEventListener("submit", function (event) {
     event.preventDefault();
     // Prevent form submission if validation fails
-    if (!validateReturnDate()) {
-    } else {
+    if (validateReturnDate()) {
       if (!localExist) {
         alert("You must be logged in to reserve a car.");
         window.location.href = "SignIn.html";

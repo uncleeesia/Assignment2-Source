@@ -7,12 +7,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     .then((response) => response.text())
     .then(
       (data) => (document.getElementById("navbar-placeholder").innerHTML = data)
-    );
-
-  fetch("./src/component/Common/NavBar/LogIn/Login.html")
-    .then((response) => response.text())
-    .then(
-      (data) => (document.getElementById("LogIn-placeholder").innerHTML = data)
     )
     .then(() => {
       var hideBtn = window.location.href.toLowerCase().includes("signin");
@@ -74,15 +68,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
         sessionStorage.setItem("sessionCarRentalEmailLogin", passwordInput);
       }
       localStorage.setItem("carRentalEmailLogin", emailInput);
-      localStorage.setItem("carRentalPasswordLogin", encodeURI(btoa(passwordInput)));
+      localStorage.setItem(
+        "carRentalPasswordLogin",
+        encodeURI(btoa(passwordInput))
+      );
 
       const storedBrand = localStorage.getItem("carBrand");
       const storedModel = localStorage.getItem("carModel");
-      
-      if(storedBrand && storedModel){
+
+      if (storedBrand && storedModel) {
         window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
-      }
-      else{
+      } else {
         window.location.href = "Index.html";
       }
     });

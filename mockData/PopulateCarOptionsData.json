@@ -13,24 +13,28 @@
       "driveType": "Front-Wheel Drive (FWD)"
     },
     "rentalStatus": {
-      "availability": "Available Now",
+      "availability": "Available",
       "lastUpdated": "3 hours ago",
       "reservation": "Confirmed",
       "nextAvailability": "12 Feb 2025",
-      "currentLocation": "Changi Airport Branch"
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "Minor scratches on rear bumper",
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "Minor scratches on rear bumper",
       "mileage": "8,942 km",
       "batteryHealth": "96%"
     },
-     "pricePerDay": "$80.00"
+    "pricePerDay": "$80.00"
   },
   {
     "car": "Ioniq-5-N",
     "brand": "Hyundai",
     "shortDescription": "A high-performance electric crossover offering sporty dynamics and cutting-edge technology.",
-    "imgUrl": "./asset/Hyundai-Ioniq-5-N.jpg",
+    "imgUrl": "./asset/Hyundai-Ioniq-5-N.avif",
     "specifications": {
       "range": "300 miles",
       "horsepower": "601 HP",
@@ -40,18 +44,22 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "New Arrival",
+      "availability": "Available",
       "lastUpdated": "1 hour ago",
       "reservation": "Not Yet Rented",
       "nextAvailability": "Immediate",
-      "currentLocation": "Downtown Branch"
+      "currentLocation": {
+        "title": "Ubi",
+        "description": "1 Ubi Avenue 3, Singapore 408857"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "Brand New",
-      "mileage": "15 km",
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "0 km",
       "batteryHealth": "100%"
     },
-     "pricePerDay": "$120.00"
+    "pricePerDay": "$120.00"
   },
   {
     "car": "iX-xDrive40",
@@ -67,14 +75,18 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "Available Now",
+      "availability": "Available",
       "lastUpdated": "2 hours ago",
       "reservation": "Confirmed",
       "nextAvailability": "15 Feb 2025",
-      "currentLocation": "Downtown Branch"
+      "currentLocation": {
+        "title": "Ubi",
+        "description": "1 Ubi Avenue 3, Singapore 408857"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "No damages reported",
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "No damages reported",
       "mileage": "12,345 km",
       "batteryHealth": "98%"
     },
@@ -83,7 +95,7 @@
       "duration": "3 Days",
       "returnDate": "10 Feb 2025"
     },
-     "pricePerDay": "$180.00"
+    "pricePerDay": "$180.00"
   },
   {
     "car": "AMG-EQE-43",
@@ -103,10 +115,14 @@
       "lastUpdated": "1 hour ago",
       "reservation": "Confirmed",
       "nextAvailability": "20 Feb 2025",
-      "currentLocation": "Jurong West Branch"
+      "currentLocation": {
+        "title": "Bukit Batok",
+        "description": "10 Bukit Batok Crescent, Singapore 658079"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "No damages reported",
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "No damages reported",
       "mileage": "5,678 km",
       "batteryHealth": "99%"
     },
@@ -115,7 +131,7 @@
       "duration": "7 Days",
       "returnDate": "15 Feb 2025"
     },
-     "pricePerDay": "$170.00"
+    "pricePerDay": "$170.00"
   },
   {
     "car": "Polestar 2",
@@ -131,18 +147,22 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "New Arrival",
+      "availability": "Available",
       "lastUpdated": "Just Now",
       "reservation": "Not Yet Rented",
       "nextAvailability": "Immediate",
-      "currentLocation": "Orchard Branch"
+      "currentLocation": {
+        "title": "Bukit Batok",
+        "description": "10 Bukit Batok Crescent, Singapore 658079"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "Brand New",
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
       "mileage": "10 km",
       "batteryHealth": "100%"
     },
-     "pricePerDay": "$80.00"
+    "pricePerDay": "$80.00"
   },
   {
     "car": "Lucid Air",
@@ -158,18 +178,22 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "Available Now",
+      "availability": "Available",
       "lastUpdated": "30 minutes ago",
       "reservation": "Confirmed",
       "nextAvailability": "17 Feb 2025",
-      "currentLocation": "Tampines Branch"
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "No damages reported",
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "No damages reported",
       "mileage": "3,210 km",
       "batteryHealth": "98%"
     },
-     "pricePerDay": "$180.00"
+    "pricePerDay": "$180.00"
   },
   {
     "car": "Porsche Taycan 4S",
@@ -185,18 +209,19 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "New Arrival",
+      "availability": "Available",
       "lastUpdated": "Just Now",
       "reservation": "Not Yet Rented",
       "nextAvailability": "Immediate",
       "currentLocation": "Bukit Timah Branch"
     },
     "inspectionReport": {
-      "vehicleCondition": "Brand New",
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
       "mileage": "8 km",
       "batteryHealth": "100%"
     },
-     "pricePerDay": "$210.00"
+    "pricePerDay": "$210.00"
   },
   {
     "car": "Model-S",
@@ -212,18 +237,22 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "New Arrival",
+      "availability": "Available",
       "lastUpdated": "Just Now",
       "reservation": "Not Yet Rented",
       "nextAvailability": "Immediate",
-      "currentLocation": "Tampines Branch"
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "Brand New",
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
       "mileage": "10 km",
       "batteryHealth": "100%"
     },
-     "pricePerDay": "$170.00"
+    "pricePerDay": "$170.00"
   },
   {
     "car": "Model-X",
@@ -239,22 +268,26 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "Rented Out",
+      "availability": "Unavailable",
       "lastUpdated": "30 minutes ago",
       "reservation": "Confirmed",
       "nextAvailability": "18 Feb 2025",
-      "currentLocation": "Tampines Branch"
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
     },
     "inspectionReport": {
-      "vehicleCondition": "No damages reported",
+      "vehicleCondition": "Under Maintenaince",
+      "vehicleConditionDetail": "Servicing",
       "mileage": "9,500 km",
       "batteryHealth": "95%"
     },
     "previousRental": {
       "renter": "Rachel Tan",
       "duration": "5 Days",
-      "returnDate": "13 Feb 2025"
+      "returnDate": "15 Feb 2025"
     },
-    "pricePerDay": "$160.00"
+    "pricePerDay": "$180.00"
   }
 ]
