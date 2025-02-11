@@ -111,8 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inspectionBlock.addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent form submission
-    console.log("submit");
-
     const vehicleAvailability = document.getElementById("vehicleAvailability").value.trim();
     const vehicleCondition = document
       .getElementById("vehicleCondition")
@@ -144,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
       previousDuration,
       previousReturnDate,
     };
-    console.log(postData)
     try {
       const response = await fetch("../../.netlify/functions/updateCarData", {
         method: "POST",

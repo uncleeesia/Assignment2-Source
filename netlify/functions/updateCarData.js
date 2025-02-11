@@ -5,18 +5,15 @@ exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
     // Parse the incoming data from the frontend
     const data = JSON.parse(event.body);
-    // The path to your JSON file (ensure this file is committed to your repository)
     const filePath = path.resolve(
       __dirname,
       "../../mockData/PopulateCarOptionsData.json"
     );
 
     try {
-      // Read the current data
       const fileContent = fs.readFileSync(filePath, "utf-8");
       let jsonData = JSON.parse(fileContent);
 
-      // Find and update the relevant car data
       let carData = jsonData.find(
         (car) => car.car.toLowerCase() === data.carModel.toLowerCase()
       );
@@ -44,10 +41,7 @@ exports.handler = async (event, context) => {
             car.rentalStatus.previousRenter = data.previousRenter;
         }
       });
-
-      // Update the data based on the incoming request (similar to the logic in your frontend)
-
-      // Save the updated data back to the file (overwrite)
+      console.log("uploading")
       fs.writeFileSync(filePath, JSON.stringify(jsonData, null, 2));
 
       return {
@@ -57,7 +51,7 @@ exports.handler = async (event, context) => {
     } catch (error) {
       return {
         statusCode: 500,
-        body: JSON.stringify({ message: "Internal server error" }),
+        body: JSON.stringify({ message: error.error}),
       };
     }
   }
