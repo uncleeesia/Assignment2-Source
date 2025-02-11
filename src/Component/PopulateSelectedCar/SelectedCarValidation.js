@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   var localEmail = localStorage.getItem("carRentalEmailLogin");
   var localPassword = localStorage.getItem("carRentalPasswordLogin");
 
-  if (localEmail.toLowerCase() == "admin@azoomcarrental.com") {
+  if (!!localEmail && localEmail.toLowerCase() == "admin@azoomcarrental.com") {
     reservationForm.classList.toggle("d-none");
     adminForm.classList.toggle("d-none");
   }

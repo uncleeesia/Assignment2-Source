@@ -7,9 +7,9 @@ exports.handler = async (event, context) => {
     const data = JSON.parse(event.body);
     const filePath = path.resolve(
       __dirname,
-      "../../mockData/PopulateCarOptionsData.json"
+      "./mockData/PopulateCarOptionsData.json"
     );
-
+    console.log("trying")
     try {
       const fileContent = fs.readFileSync(filePath, "utf-8");
       let jsonData = JSON.parse(fileContent);
@@ -49,9 +49,11 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({ message: "Data updated successfully" }),
       };
     } catch (error) {
+      console.log("error",error)
+
       return {
         statusCode: 500,
-        body: JSON.stringify({ message: error.error}),
+        body: JSON.stringify({ message: "Internal Server Error"}),
       };
     }
   }

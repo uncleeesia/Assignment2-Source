@@ -1,18 +1,18 @@
 import { populateWhyChooseUs } from "../Common/InformationCard/GenerateInformationCard.js";
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("../mockData/PopulateInformationsData.json")
+  fetch("../netlify/functions/mockData/PopulateInformationsData.json")
     .then((response) => response.text())
     .then((data) => {
       var filteredData = JSON.parse(data).filter((x) => x.type == "1");
       populateWhyChooseUs("rental-process-container", filteredData);
     });
-  fetch("../mockData/PopulateInformationsData.json")
+  fetch("../netlify/functions/mockData/PopulateInformationsData.json")
     .then((response) => response.text())
     .then((data) => {
       var filteredData = JSON.parse(data).filter((x) => x.type == "2");
       populateWhyChooseUs("final-process-container", filteredData);
     });
-  fetch("../mockData/PopulateLocationData.json")
+  fetch("../netlify/functions/mockData/PopulateLocationData.json")
     .then((response) => response.json())
     .then((data) => {
       const returnLocationDropdown = document.getElementById("returnLocation");
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         returnLocationDropdown.appendChild(option);
       });
     });
-  fetch("../mockData/PopulateCarOptionsData.json")
+  fetch("../netlify/functions/mockData/PopulateCarOptionsData.json")
     .then((response) => response.text())
     .then((data) => {
       var urlParams = new URLSearchParams(window.location.search);
