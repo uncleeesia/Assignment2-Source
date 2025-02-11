@@ -4,8 +4,6 @@ const path = require("path");
 exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
     // Parse the incoming data from the frontend
-    const dataPath = `${process.env.PUBLIC_URL}/mockData/PopulateCarOptionsData.json`;
-    console.log(process.env)
     const data = JSON.parse(event.body);
     const filePath = path.resolve(
       __dirname,
