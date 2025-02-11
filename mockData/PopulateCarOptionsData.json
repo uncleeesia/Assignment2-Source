@@ -32,7 +32,7 @@
     "pricePerDay": "$80.00"
   },
   {
-    "car": "Ioniq-5-N",
+    "car": "Ioniq 5 N",
     "brand": "Hyundai",
     "shortDescription": "A high-performance electric crossover offering sporty dynamics and cutting-edge technology.",
     "imgUrl": "./asset/Hyundai-Ioniq-5-N.avif",
@@ -52,11 +52,12 @@
       "currentLocation": {
         "title": "Ubi",
         "description": "1 Ubi Avenue 3, Singapore 408857"
-      }
+      },
+      "previousRenter": ""
     },
     "inspectionReport": {
       "vehicleCondition": "New",
-      "vehicleConditionDetail": "No damages reported",
+      "vehicleConditionDetail": "",
       "mileage": "0 km",
       "batteryHealth": "100%"
     },
@@ -64,7 +65,7 @@
     "pricePerDay": "$120.00"
   },
   {
-    "car": "iX-xDrive40",
+    "car": "iX xDrive40",
     "brand": "BMW",
     "shortDescription": "A luxury all-electric SUV with futuristic design, premium comfort, and intelligent driving features.",
     "imgUrl": "./asset/BMW-iX-xDrive40.jpg",
@@ -101,7 +102,7 @@
     "pricePerDay": "$180.00"
   },
   {
-    "car": "AMG-EQE-43",
+    "car": "AMG EQE 43",
     "brand": "Mercedes",
     "shortDescription": "A performance-focused electric sedan combining AMG power with advanced electric mobility.",
     "imgUrl": "./asset/Mercedes-AMG-EQE-43.jpg",
@@ -234,7 +235,7 @@
     "pricePerDay": "$210.00"
   },
   {
-    "car": "Model-S",
+    "car": "Model S",
     "brand": "Tesla",
     "shortDescription": "A premium electric sedan with impressive range, autopilot capabilities, and rapid acceleration.",
     "imgUrl": "./asset/Tesla-Model-S.jpg",
@@ -266,7 +267,7 @@
     "pricePerDay": "$170.00"
   },
   {
-    "car": "Model-X",
+    "car": "Model X",
     "brand": "Tesla",
     "shortDescription": "A luxury electric SUV with falcon-wing doors, long-range capabilities, and high-tech features.",
     "imgUrl": "./asset/Tesla-Model-X.jpg",

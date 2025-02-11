@@ -44,6 +44,7 @@
       <h1>AZoom Car Rental</h1>
       <div class="container-fluid">
         <div id="navbar-placeholder"></div>
+        <div id="name"></div>
       </div>
     </header>
     <main class="container-fluid pt-3 pb-5 px-5">
@@ -62,7 +63,7 @@
           <div class="d-flex justify-content-around align-items-center">
             <div class="status-badge bg-success text-white">
               <strong>Status: </strong
-              ><span id="summaryAvailability">Available Now</span>
+              ><span id="summaryAvailability">Available</span>
             </div>
             <small id="summaryLastUpdated" class="ml-3 text-muted"
               >Last updated: 2 hours ago</small
@@ -169,8 +170,126 @@
             </div>
           </div>
         </div>
+        <form id="editInspectionBlock" class="d-none col-md-6">
+          <div class="card shadow-sm inspection-card">
+            <div class="card-body">
+              <h4 class="mb-4" style="color: #555 !important;">
+                Submit New Inspection Report
+              </h4>
+              <div class="row">
+                <!-- Vehicle Condition & Status -->
+                <div class="col-md-6">
+                  <div class="d-flex justify-content-between">
+                    <h5>Vehicle Condition</h5>
+                  </div>
+                  <div class="form-group">
+                    <label for="vehicleAvailability">Vehicle Status</label>
+                    <select id="vehicleAvailability" class="form-control">
+                      <option value="">Select</option>
+                      <option value="Available">Available</option>
+                      <option value="Unavailable">Unavailable</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="vehicleCondition">Condition</label>
+                    <select id="vehicleCondition" class="form-control">
+                      <option value="">Select</option>
+                      <option value="New">New</option>
+                      <option value="Good">Good</option>
+                      <option value="Damaged">Damaged</option>
+                      <option value="Under Maintenance"
+                        >Under Maintenance</option
+                      >
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="vehicleConditionDetail"
+                      >Condition Details</label
+                    >
+                    <input
+                      type="text"
+                      id="vehicleConditionDetail"
+                      class="form-control"
+                      placeholder="Describe damages (if any)"
+                    />
+                  </div>
+
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-tachometer-alt mr-2"></i>
+                      Mileage:
+                      <input
+                        type="number"
+                        id="mileage"
+                        class="form-control form-control-sm"
+                        placeholder="Enter mileage"
+                      />
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-battery-full mr-2"></i>
+                      Battery Health:
+                      <input
+                        type="number"
+                        id="batteryHealth"
+                        class="form-control form-control-sm"
+                        placeholder="Battery %"
+                        min="0"
+                        max="100"
+                      />
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Previous Rental Info -->
+                <div class="col-md-6 border-left">
+                  <h5>Previous Rental</h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <label for="previousRenter"
+                        ><strong>Previous Renter Name:</strong></label
+                      >
+                      <input
+                        type="text"
+                        id="previousRenter"
+                        class="form-control form-control-sm"
+                        placeholder="Enter name"
+                      />
+                    </li>
+                    <li class="mb-2">
+                      <label for="previousDuration"
+                        ><strong>Duration:</strong></label
+                      >
+                      <input
+                        type="text"
+                        id="previousDuration"
+                        class="form-control form-control-sm"
+                        placeholder="e.g., 3 Days"
+                      />
+                    </li>
+                    <li class="mb-2">
+                      <label for="previousReturnDate"
+                        ><strong>Return Date:</strong></label
+                      >
+                      <input
+                        type="date"
+                        id="previousReturnDate"
+                        class="form-control form-control-sm"
+                      />
+                    </li>
+                    <li id="saveBtn" class="col-md-12 mb-3">
+                      <button class="btn btn-primary btn-block">
+                        Save <i class="fas fa-arrow-right ml-2"></i>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
         <!-- Current Status -->
-        <div class="col-md-6">
+        <div id="RentalBlock" class="col-md-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
               <h4 class="mb-4" style="color: #555 !important;">
@@ -225,7 +344,7 @@
               <i class="fas fa-arrow-left mr-2"></i>Back to Selection
             </a>
           </div>
-          <div class="col-md-6 mb-3">
+          <div id="paymentBtn" class="col-md-6 mb-3">
             <a href="payment.html" class="btn btn-primary btn-block">
               Proceed to Payment <i class="fas fa-arrow-right ml-2"></i>
             </a>

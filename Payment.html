@@ -44,6 +44,7 @@
       <h1>AZoom Car Rental</h1>
       <div class="container-fluid">
         <div id="navbar-placeholder"></div>
+        <div id="name"></div>
       </div>
     </header>
     <main class="container-fluid pt-3 pb-5 px-5">
@@ -56,11 +57,11 @@
           <div class="card shadow-sm payment-card mb-3">
             <div class="card-body">
               <!-- Payment Details -->
-              <form>
+              <form id="paymentSubmission">
                 <div class="form-group">
                   <label>Card Number</label>
                   <input
-                    id="credit-card"
+                    id="creditCardInput"
                     type="text"
                     class="form-control card-number-input"
                     placeholder="1234 5678 9011 1213"
@@ -74,9 +75,9 @@
                     <div class="form-group">
                       <label>Expiry Date</label>
                       <input
+                        id="expiryCardInput"
                         type="text"
                         class="form-control"
-                        id="expiryDate"
                         placeholder="MM/YY"
                         maxlength="5"
                       />
@@ -86,6 +87,7 @@
                     <div class="form-group">
                       <label>CVV</label>
                       <input
+                        id="cvvCardInput"
                         type="text"
                         class="form-control"
                         placeholder="123"
@@ -136,8 +138,6 @@
                   </div>
                 </div>
               </div>
-
-              <hr />
 
               <h6><strong>Cost Breakdown</strong></h6>
               <ul class="list-unstyled">

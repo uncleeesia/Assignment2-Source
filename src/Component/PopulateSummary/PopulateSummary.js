@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  var inspectionBlock = document.getElementById("editInspectionBlock");
+
   document.getElementById("backButton").addEventListener("click", (e) => {
     localStorage.removeItem("selectedCar");
     window.location.href = "./Selected.html";
@@ -17,7 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
           x.brand.toLowerCase() == brandParams &&
           x.car.replace(/ /g, "-").toLowerCase() == carModelParams
       );
-
+      if (
+        localStorage.getItem("carRentalEmailLogin").toLowerCase() ==
+        "admin@azoomcarrental.com"
+      ) {
+        document.getElementById("paymentBtn").classList.toggle("d-none");
+        document.getElementById("RentalBlock").classList.toggle("d-none");
+        inspectionBlock.classList.toggle("d-none");
+      }
       filteredData.forEach((carData) => {
         localStorage.setItem("selectedCar", JSON.stringify(carData));
 
@@ -80,11 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem(
           "paymentDetails",
           JSON.stringify({
-            "insurancePrice": parseFloat(carData.insurancePrice.split("$")[1]).toFixed(
-              2
-            ),
-            "total": caltotalPrice,
-            "duration": calculateTotalDuration(),
+            insurancePrice: parseFloat(
+              carData.insurancePrice.split("$")[1]
+            ).toFixed(2),
+            total: caltotalPrice,
+            duration: calculateTotalDuration(),
           })
         );
 
@@ -99,7 +108,68 @@ document.addEventListener("DOMContentLoaded", () => {
         }`;
       });
     });
+
+  inspectionBlock.addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent form submission
+    console.log("submit");
+
+    const vehicleAvailability = document.getElementById("vehicleAvailability").value.trim();
+    const vehicleCondition = document
+      .getElementById("vehicleCondition")
+      .value.trim();
+    const vehicleConditionDetail = document
+      .getElementById("vehicleConditionDetail")
+      .value.trim();
+    const mileage = document.getElementById("mileage").value.trim();
+    const batteryHealth = document.getElementById("batteryHealth").value.trim();
+    const previousRenter = document
+      .getElementById("previousRenter")
+      .value.trim();
+    const previousDuration = document
+      .getElementById("previousDuration")
+      .value.trim();
+    const previousReturnDate = document
+      .getElementById("previousReturnDate")
+      .value.trim();
+
+    // Prepare the data to send to the backend function
+    const postData = {
+      carModel: localStorage.getItem("carModel").replace(/-/g, " "),
+      vehicleAvailability,
+      vehicleCondition,
+      vehicleConditionDetail,
+      mileage,
+      batteryHealth,
+      previousRenter,
+      previousDuration,
+      previousReturnDate,
+    };
+    console.log(postData)
+    try {
+      const response = await fetch("../../.netlify/functions/updateCarData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert("Inspection report updated successfully!");
+
+        const storedBrand = localStorage.getItem("carBrand");
+        const storedModel = localStorage.getItem("carModel");
+        window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+      } else {
+        alert(`Failed to update data: ${result.message}`);
+      }
+    } catch (error) {
+      alert("Error updating data: " + error.message);
+    }
+  });
 });
+
 function calculateTotalPrice(rentalPrice = 0) {
   var price = rentalPrice.split("$")[1];
 

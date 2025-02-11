@@ -1,8 +1,16 @@
 document.addEventListener("DOMContentLoaded", function (e) {
   const reservationForm = document.getElementById("reservation-form");
+  const adminForm = document.getElementById("admin-form");
   const pickupDateInput = document.getElementById("pickup-date");
   const returnDateInput = document.getElementById("return-date");
   const returnLocationDropdown = document.getElementById("returnLocation");
+  var localEmail = localStorage.getItem("carRentalEmailLogin");
+  var localPassword = localStorage.getItem("carRentalPasswordLogin");
+
+  if (localEmail.toLowerCase() == "admin@azoomcarrental.com") {
+    reservationForm.classList.toggle("d-none");
+    adminForm.classList.toggle("d-none");
+  }
 
   function validateReturnDate(_pickupDateInput, _returnDateInput) {
     const pickupDate = new Date(_pickupDateInput);
@@ -45,9 +53,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     localStorage.setItem("returnLocation", e.target.value);
   });
 
-  var localExist =
-    !!localStorage.getItem("carRentalEmailLogin") &&
-    !!localStorage.getItem("carRentalPasswordLogin");
+  var localExist = !!localEmail && !!localPassword;
 
   reservationForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -60,5 +66,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         window.location.href = `Summary.html`;
       }
     }
+  });
+  adminForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    window.location.href = `Summary.html`;
   });
 });

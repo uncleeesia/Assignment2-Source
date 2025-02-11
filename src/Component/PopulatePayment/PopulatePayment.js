@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const creditCardInput = document.getElementById("credit-card");
+  const creditCardInput = document.getElementById("creditCardInput");
+  const expiryCardInput = document.getElementById("expiryCardInput");
+  const cvvCardInput = document.getElementById("cvvCardInput");
+  const paymentForm = document.getElementById("paymentSubmission");
   const paymentAmount = document.getElementById("paymentAmount");
   const paymentImgUrl = document.getElementById("paymentImgUrl");
   const paymentCarModel = document.getElementById("paymentCarModel");
@@ -11,10 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const paymentDeposit = document.getElementById("paymentDeposit");
 
   creditCardInput.addEventListener("change", (e) => {
-    console.log(e.target.value);
+    let value = e.target.value.replace(/\D/g, "");
+    value = value.replace(/(\d{4})/g, "$1 ").trim();
+    e.target.value = value.substring(0, 19); // Limit to 16 digits + spaces
     return validateCreditCard();
   });
-  document.getElementById("expiryDate").addEventListener("input", function (e) {
+
+  expiryCardInput.addEventListener("input", function (e) {
     let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
     if (value.length > 2) {
       value = value.substring(0, 2) + "/" + value.substring(2, 4); // Auto-add slash
@@ -45,21 +51,57 @@ document.addEventListener("DOMContentLoaded", () => {
     parseFloat(localStoragePaymentDetail.insurancePrice) +
     parseFloat(localStoragePaymentDetail.total * 0.6)
   ).toFixed(2)}`;
-});
+  paymentForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent actual form submission
 
-function validateCreditCard() {
-  const creditCardNumber = creditCardInput.value.replace(/[\s-]/g, ""); // Remove spaces and hyphens
-  const creditCardPattern = /^\d{16}$/; // 16 digits only
+    const cardNumber = creditCardInput.value.replace(/\s/g, "");
+    const expiryDate = expiryCardInput.value;
+    const cvv = cvvCardInput.value;
 
-  if (!creditCardPattern.test(creditCardNumber)) {
-    creditCardInput.setCustomValidity(
-      "Please enter a valid 16-digit credit card number."
+    if (!/^\d{16}$/.test(cardNumber)) {
+      alert("Please enter a valid 16-digit card number.");
+      return;
+    }
+
+    if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
+      alert("Please enter a valid expiry date in MM/YY format.");
+      return;
+    }
+
+    if (!/^\d{3}$/.test(cvv)) {
+      alert("Please enter a valid 3-digit CVV.");
+      return;
+    }
+
+    alert(
+      "Payment Successful! Amount: $" +
+        document.getElementById("paymentAmount").innerText
     );
-    creditCardInput.reportValidity();
-    return false;
-  } else {
-    creditCardInput.setCustomValidity("");
-    creditCardInput.reportValidity();
-    return true;
+    paymentForm.reset();
+    localStorage.removeItem("carBrand");
+    localStorage.removeItem("carModel");
+    localStorage.removeItem("carData");
+    localStorage.removeItem("paymentDetails");
+    localStorage.removeItem("pickupDate");
+    localStorage.removeItem("returnDate");
+    localStorage.removeItem("returnLocation");
+    localStorage.removeItem("selectedCar");
+    window.location.href = "./CarOptions.html";
+  });
+  function validateCreditCard() {
+    const creditCardNumber = creditCardInput.value.replace(/[\s-]/g, ""); // Remove spaces and hyphens
+    const creditCardPattern = /^\d{16}$/; // 16 digits only
+
+    if (!creditCardPattern.test(creditCardNumber)) {
+      creditCardInput.setCustomValidity(
+        "Please enter a valid 16-digit credit card number."
+      );
+      creditCardInput.reportValidity();
+      return false;
+    } else {
+      creditCardInput.setCustomValidity("");
+      creditCardInput.reportValidity();
+      return true;
+    }
   }
-}
+});

@@ -10,10 +10,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     )
     .then(() => {
       var hideBtn = window.location.href.toLowerCase().includes("signin");
+      var localEmail = localStorage.getItem("carRentalEmailLogin");
+      var localPassword = localStorage.getItem("carRentalPasswordLogin");
+      var localExist = !!localEmail && !!localPassword;
 
-      var localExist =
-        !!localStorage.getItem("carRentalEmailLogin") &&
-        !!localStorage.getItem("carRentalPasswordLogin");
+      document.getElementById("name").innerHTML = localExist
+        ? localEmail.split("@")[0]
+        : "";
 
       document
         .getElementById("login")
@@ -32,16 +35,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
           "d-none",
           (!localExist && !hideBtn) || (!localExist && hideBtn)
         );
-
       document.getElementById("login").addEventListener("click", () => {
-        localStorage.removeItem("user");
-        location.reload();
+        localStorage.removeItem("carRentalEmailLogin");
+        localStorage.removeItem("carRentalPasswordLogin");
         window.location.href = "SignIn.html";
       });
       document.getElementById("logout").addEventListener("click", () => {
         localStorage.removeItem("carRentalEmailLogin");
         localStorage.removeItem("carRentalPasswordLogin");
-        location.reload();
         window.location.href = "SignIn.html";
       });
     });
@@ -67,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         sessionStorage.setItem("sessionCarRentalEmailLogin", emailInput);
         sessionStorage.setItem("sessionCarRentalEmailLogin", passwordInput);
       }
+
       localStorage.setItem("carRentalEmailLogin", emailInput);
       localStorage.setItem(
         "carRentalPasswordLogin",
@@ -76,10 +78,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
       const storedBrand = localStorage.getItem("carBrand");
       const storedModel = localStorage.getItem("carModel");
 
-      if (storedBrand && storedModel) {
-        window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+      if (emailInput.toLowerCase() == "admin@azoomcarrental.com") {
+        window.location.href = "CarOptions.html?superRole=true";
       } else {
-        window.location.href = "Index.html";
+        if (storedBrand && storedModel) {
+          window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+        } else {
+          window.location.href = "Index.html";
+        }
       }
     });
   }

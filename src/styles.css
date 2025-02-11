@@ -26,7 +26,7 @@ nav {
   margin-top: 1rem;
 }
 
-nav a {
+nav a, #name{
   color: #e7d2cc;
   font-weight: bold;
   padding: 0.5rem 1rem;

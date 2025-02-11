@@ -1,0 +1,10 @@
+{
+  "name": "9090125-toh-wei-yang-assignment2",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "netlify-cli": "^18.0.4"
+  }
+}

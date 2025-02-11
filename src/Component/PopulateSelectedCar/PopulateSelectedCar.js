@@ -13,17 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
       populateWhyChooseUs("final-process-container", filteredData);
     });
   fetch("../mockData/PopulateLocationData.json")
-  .then((response)=>response.json())
-  .then((data)=>{
-    const returnLocationDropdown = document.getElementById("returnLocation");
+    .then((response) => response.json())
+    .then((data) => {
+      const returnLocationDropdown = document.getElementById("returnLocation");
 
-    data.forEach(location => {
+      data.forEach((location) => {
         const option = document.createElement("option");
         option.value = `${location.title}, ${location.description}`;
         option.textContent = `${location.title}, ${location.description}`;
         returnLocationDropdown.appendChild(option);
+      });
     });
-  })
   fetch("../mockData/PopulateCarOptionsData.json")
     .then((response) => response.text())
     .then((data) => {
@@ -92,7 +92,15 @@ document.addEventListener("DOMContentLoaded", () => {
           );
         } else {
           document.getElementById("reserveBtn").classList.toggle("d-none");
-          document.getElementById("reservation-form").classList.toggle("d-none");
+
+          if (
+            localStorage.getItem("carRentalEmailLogin").toLowerCase() !=
+            "admin@azoomcarrental.com"
+          ) {
+            document
+              .getElementById("reservation-form")
+              .classList.toggle("d-none");
+          }
           availability.classList.add(
             "status-badge",
             "bg-warning",
