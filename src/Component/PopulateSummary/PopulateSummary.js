@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "./Selected.html";
   });
 
-  fetch("../netlify/functions/mockData/PopulateCarOptionsData.json")
+  fetch("..../../mockData/PopulateCarOptionsData.json")
     .then((response) => response.text())
     .then((data) => {
       var brandParams = localStorage.getItem("carBrand");
