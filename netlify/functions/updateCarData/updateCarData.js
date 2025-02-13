@@ -27,6 +27,7 @@ const getFilePath = (fileName) => {
 };
 
 exports.handler = async (event) => {
+  console.log(event)
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,

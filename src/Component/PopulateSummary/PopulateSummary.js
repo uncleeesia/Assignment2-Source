@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   fetch(
-    "../../netlify/functions/updateCarData/mockData/PopulateCarOptionsData.json"
+    "./netlify/functions/updateCarData/mockData/PopulateCarOptionsData.json"
   )
     .then((response) => response.text())
     .then((data) => {
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
       var carModelParams = localStorage.getItem("carModel");
       if (!brandParams && !carModelParams)
         alert("Please select valid car. Redirect to car fleet...");
-
       var filteredData = JSON.parse(data).filter(
         (x) =>
           x.brand.toLowerCase() == brandParams &&
@@ -175,64 +174,39 @@ document.addEventListener("DOMContentLoaded", () => {
       previousReturnDate,
     };
     try {
-      const CarDataDirectoryUrl =
-        "../../.netlify/functions/updateCarData/updateCarData";
-      const CarDataFallbackRepoUrl =
-        "../../netlify/functions/updateCarData/updateCarData";
-      tryAccessDirectory(CarDataDirectoryUrl).then((isAccessible) => {
-        if (isAccessible) {
-          console.log(`Directory accessible: ${directoryUrl}`);
-          fetch(CarDataDirectoryUrl, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(postData),
-          });
-
-          const result = response.json();
-          if (response.ok) {
-            alert("Inspection report updated successfully!");
-
-            const storedBrand = localStorage.getItem("carBrand");
-            const storedModel = localStorage.getItem("carModel");
-            window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
-          } else {
-            alert(`Failed to update data: ${result.message}`);
-          }
-        } else {
-          console.log(`Directory not accessible, falling back to local repo.`);
-          tryAccessDirectory(CarDataFallbackRepoUrl).then(
-            (fallbackAccessible) => {
-              if (fallbackAccessible) {
-                console.log(
-                  `Directory not accessible, falling back to local repo.`
-                );
-                fetch(CarDataFallbackRepoUrl, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(postData),
-                });
-
-                const result = response.json();
-                if (response.ok) {
-                  alert("Inspection report updated successfully!");
-
-                  const storedBrand = localStorage.getItem("carBrand");
-                  const storedModel = localStorage.getItem("carModel");
-                  window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
-                } else {
-                  alert(`Failed to update data: ${result.message}`);
-                }
-              }
-            }
-          );
-        }
+      const CarDataDirectoryUrl = "../../netlify/functions/updateCarData";
+      const CarDataFallbackRepoUrl = "../../.netlify/functions/updateCarData"; // Local fallback
+    
+      // Check if main directory is accessible
+      const isAccessible = await tryAccessDirectory(CarDataDirectoryUrl);
+    
+      // Determine which URL to use
+      const apiUrl = isAccessible ? CarDataDirectoryUrl : CarDataFallbackRepoUrl;
+      console.log(`Using API URL: ${apiUrl}`);
+    
+      // Send POST request
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
       });
+    
+      const result = await response.json(); // Fix: Properly await JSON parsing
+      console.log("Server Response:", result);
+    
+      if (response.ok) {
+        alert("Inspection report updated successfully!");
+    
+        const storedBrand = localStorage.getItem("carBrand");
+        const storedModel = localStorage.getItem("carModel");
+        window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+      } else {
+        alert(`Failed to update data: ${result.message || "Unknown error"}`);
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Error updating data:", error);
       alert("Error updating data: " + error.message);
     }
   });

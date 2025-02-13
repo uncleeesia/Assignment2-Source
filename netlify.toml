@@ -2,6 +2,6 @@
   functions = "/.netlify/functions/updateCarData"
   
 [[redirects]]
-from = "/.netlify/functions/*"
+from = "/.netlify*"
 to = "/.netlify/functions/:splat"
 status = 200
