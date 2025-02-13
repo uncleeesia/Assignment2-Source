@@ -1,7 +1,7 @@
 import { populateImageCard } from "../Common/ImageCard/GenerateImageCard.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("..../../mockData/PopulateCarOptionsData.json")
+  fetch("../../netlify/functions/updateCarData/mockData/PopulateCarOptionsData.json")
     .then((response) => response.json())
     .then((data) => {
       const inputField = document.getElementById("input-datalist");

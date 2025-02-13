@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   var inspectionBlock = document.getElementById("editInspectionBlock");
-
+  const localEmail = localStorage.getItem("carRentalEmailLogin");
   document.getElementById("backButton").addEventListener("click", (e) => {
     localStorage.removeItem("selectedCar");
     window.location.href = "./Selected.html";
   });
 
-  fetch("..../../mockData/PopulateCarOptionsData.json")
+  fetch("../../netlify/functions/updateCarData/mockData/PopulateCarOptionsData.json")
     .then((response) => response.text())
     .then((data) => {
       var brandParams = localStorage.getItem("carBrand");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
           x.car.replace(/ /g, "-").toLowerCase() == carModelParams
       );
       if (
-        localStorage.getItem("carRentalEmailLogin").toLowerCase() ==
+        !!localEmail && localEmail.toLowerCase() ==
         "admin@azoomcarrental.com"
       ) {
         document.getElementById("paymentBtn").classList.toggle("d-none");
@@ -78,7 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
         chargingTime.innerHTML = `${carData.specifications.chargingTime}`;
         capacity.innerHTML = `${carData.specifications.seatingCapacity}`;
         driveType.innerHTML = `${carData.specifications.driveType}`;
-        availability.innerHTML = `${carData.rentalStatus.availability}`;
+        availability.innerHTML = `<strong>Status: </strong>${carData.rentalStatus.availability}`;
+        if (carData.rentalStatus.availability == "Available") {
+          availability.classList.add(
+            "status-badge",
+            "bg-success",
+            "text-white"
+          );
+        } else {
+          if (
+            localStorage.getItem("carRentalEmailLogin").toLowerCase() !=
+            "admin@azoomcarrental.com"
+          ) {
+            document
+              .getElementById("reservation-form")
+              .classList.toggle("d-none");
+          }
+          availability.classList.add(
+            "status-badge",
+            "bg-warning",
+            "text-danger"
+          );
+        }
         pricePerDay.innerHTML = `<strong>Rental Per Day:</strong> <br>${carData.pricePerDay}`;
         currentLocation.innerHTML = `${carData.rentalStatus.currentLocation.title}, ${carData.rentalStatus.currentLocation.description}`;
         returnLocation.innerHTML = `${localStorage.getItem("returnLocation")}`;
@@ -98,6 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         vehicleCondition.innerHTML = `${carData.inspectionReport.vehicleCondition}`;
+        if (
+          ["Good", "New"].includes(carData.inspectionReport.vehicleCondition)
+        ) {
+          vehicleCondition.classList.add(
+            "alert","alert-success"
+          );
+        } else {
+          vehicleCondition.classList.add(
+            "alert","alert-warning"
+          );
+        }
         mileage.innerHTML = `${carData.inspectionReport.mileage}`;
         batteryHealth.innerHTML = `${carData.inspectionReport.batteryHealth}`;
         previousDuration.innerHTML = `${
@@ -143,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       previousReturnDate,
     };
     try {
-      const response = await fetch("../../.netlify/functions/updateCarData", {
+      const response = await fetch("../../.netlify/functions/updateCarData/updateCarData", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
