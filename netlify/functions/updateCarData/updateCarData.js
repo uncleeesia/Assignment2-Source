@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const getFilePath = (fileName) => {
+  console.log("called")
   const tmpDir = "/tmp"; // Temporary directory
   const tmpFilePath = path.join(tmpDir, fileName);
   const localFilePath = path.join(__dirname, "mockData", fileName);

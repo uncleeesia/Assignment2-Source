@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "./Selected.html";
   });
 
-  fetch("../../netlify/functions/updateCarData/mockData/PopulateCarOptionsData.json")
+  fetch(
+    "../../netlify/functions/updateCarData/mockData/PopulateCarOptionsData.json"
+  )
     .then((response) => response.text())
     .then((data) => {
       var brandParams = localStorage.getItem("carBrand");
@@ -20,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
           x.car.replace(/ /g, "-").toLowerCase() == carModelParams
       );
       if (
-        !!localEmail && localEmail.toLowerCase() ==
-        "admin@azoomcarrental.com"
+        !!localEmail &&
+        localEmail.toLowerCase() == "admin@azoomcarrental.com"
       ) {
         document.getElementById("paymentBtn").classList.toggle("d-none");
         document.getElementById("RentalBlock").classList.toggle("d-none");
@@ -122,13 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (
           ["Good", "New"].includes(carData.inspectionReport.vehicleCondition)
         ) {
-          vehicleCondition.classList.add(
-            "alert","alert-success"
-          );
+          vehicleCondition.classList.add("alert", "alert-success");
         } else {
-          vehicleCondition.classList.add(
-            "alert","alert-warning"
-          );
+          vehicleCondition.classList.add("alert", "alert-warning");
         }
         mileage.innerHTML = `${carData.inspectionReport.mileage}`;
         batteryHealth.innerHTML = `${carData.inspectionReport.batteryHealth}`;
@@ -143,7 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inspectionBlock.addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent form submission
-    const vehicleAvailability = document.getElementById("vehicleAvailability").value.trim();
+    const vehicleAvailability = document
+      .getElementById("vehicleAvailability")
+      .value.trim();
     const vehicleCondition = document
       .getElementById("vehicleCondition")
       .value.trim();
@@ -175,25 +175,64 @@ document.addEventListener("DOMContentLoaded", () => {
       previousReturnDate,
     };
     try {
-      const response = await fetch("../../.netlify/functions/updateCarData/updateCarData", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postData),
+      const CarDataDirectoryUrl =
+        "../../.netlify/functions/updateCarData/updateCarData";
+      const CarDataFallbackRepoUrl =
+        "../../netlify/functions/updateCarData/updateCarData";
+      tryAccessDirectory(CarDataDirectoryUrl).then((isAccessible) => {
+        if (isAccessible) {
+          console.log(`Directory accessible: ${directoryUrl}`);
+          fetch(CarDataDirectoryUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
+          });
+
+          const result = response.json();
+          if (response.ok) {
+            alert("Inspection report updated successfully!");
+
+            const storedBrand = localStorage.getItem("carBrand");
+            const storedModel = localStorage.getItem("carModel");
+            window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+          } else {
+            alert(`Failed to update data: ${result.message}`);
+          }
+        } else {
+          console.log(`Directory not accessible, falling back to local repo.`);
+          tryAccessDirectory(CarDataFallbackRepoUrl).then(
+            (fallbackAccessible) => {
+              if (fallbackAccessible) {
+                console.log(
+                  `Directory not accessible, falling back to local repo.`
+                );
+                fetch(CarDataFallbackRepoUrl, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(postData),
+                });
+
+                const result = response.json();
+                if (response.ok) {
+                  alert("Inspection report updated successfully!");
+
+                  const storedBrand = localStorage.getItem("carBrand");
+                  const storedModel = localStorage.getItem("carModel");
+                  window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
+                } else {
+                  alert(`Failed to update data: ${result.message}`);
+                }
+              }
+            }
+          );
+        }
       });
-
-      const result = await response.json();
-      if (response.ok) {
-        alert("Inspection report updated successfully!");
-
-        const storedBrand = localStorage.getItem("carBrand");
-        const storedModel = localStorage.getItem("carModel");
-        window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
-      } else {
-        alert(`Failed to update data: ${result.message}`);
-      }
     } catch (error) {
+      console.log(error);
       alert("Error updating data: " + error.message);
     }
   });
@@ -213,4 +252,21 @@ function calculateTotalDuration() {
   // Calculate the difference in millisecnds
   var diffInMs = (end - start) / (1000 * 60 * 60 * 24);
   return diffInMs <= 0 ? 1 : diffInMs;
+}
+// Function to try accessing a directory/file via HTTP request
+function tryAccessDirectory(url) {
+  return fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        // If the response is successful (status 200), the resource is accessible
+        return true;
+      } else {
+        // If the resource is not found or another error occurs
+        return false;
+      }
+    })
+    .catch(() => {
+      // If there is an error making the request (e.g., network error), consider it inaccessible
+      return false;
+    });
 }
