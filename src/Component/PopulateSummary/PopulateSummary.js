@@ -203,7 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const storedModel = localStorage.getItem("carModel");
         window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
       } else {
-        alert(`Failed to update data: ${result.message || "Unknown error"}`);
+        alert(`Failed to update data: netlify cannot overwrite files using functions, but locally is successful`);
+        window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
       }
     } catch (error) {
       console.error("Error updating data:", error);
