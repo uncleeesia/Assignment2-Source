@@ -45,7 +45,7 @@
       "driveType": "All-Wheel Drive (AWD)"
     },
     "rentalStatus": {
-      "availability": "Unavailable",
+      "availability": "Available",
       "lastUpdated": "1 hour ago",
       "reservation": "Not Yet Rented",
       "nextAvailability": "Immediate",
