@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   var inspectionBlock = document.getElementById("editInspectionBlock");
   const localEmail = localStorage.getItem("carRentalEmailLogin");
+  const storedBrand = localStorage.getItem("carBrand");
+  const storedModel = localStorage.getItem("carModel");
+
   document.getElementById("backButton").addEventListener("click", (e) => {
     localStorage.removeItem("selectedCar");
     window.location.href = "./Selected.html";
@@ -197,8 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const result = await response.json(); // Fix: Properly await JSON parsing
       console.log("Server Response:", result);
-      const storedBrand = localStorage.getItem("carBrand");
-      const storedModel = localStorage.getItem("carModel");
+
       if (response.ok) {
         alert("Inspection report updated successfully!");
 
