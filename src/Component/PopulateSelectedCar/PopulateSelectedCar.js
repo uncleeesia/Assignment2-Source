@@ -1,5 +1,6 @@
 import { populateWhyChooseUs } from "../Common/InformationCard/GenerateInformationCard.js";
 document.addEventListener("DOMContentLoaded", async () => {
+  const localEmail = localStorage.getItem("carRentalEmailLogin");
   fetch(
     "./netlify/functions/updateCarData/mockData/PopulateInformationsData.json"
   )
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("reserveBtn").classList.toggle("d-none");
 
             if (
-              localStorage.getItem("carRentalEmailLogin").toLowerCase() !=
+              !!localEmail && localEmail.toLowerCase() !=
               "admin@azoomcarrental.com"
             ) {
               document
