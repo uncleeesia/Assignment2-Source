@@ -195,12 +195,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
       const result = await response.json(); // Fix: Properly await JSON parsing
       console.log("Server Response:", result);
-    
+      const storedBrand = localStorage.getItem("carBrand");
+      const storedModel = localStorage.getItem("carModel");    
       if (response.ok) {
         alert("Inspection report updated successfully!");
-    
-        const storedBrand = localStorage.getItem("carBrand");
-        const storedModel = localStorage.getItem("carModel");
+
         window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
       } else {
         alert(`Failed to update data: netlify cannot overwrite files using functions, but locally is successful`);
