@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Rent a Car",
+    "description": "Visit our office to pick up your reserved car. Bring your ID and reservation confirmation.",
+    "type": "1"
+  },
+  {
+    "title": "Return a Car",
+    "description": "Return the car to the designated car park. Ensure all personal belongings are removed.",
+    "type": "1"
+  },
+  {
+    "title": "Inspection & Payment",
+    "description": "Our team will inspect the car for damages. You will receive the final bill, including any additional charges.",
+    "type": "1"
+  },
+  {
+    "title": "Car Inspection",
+    "description": "Our employees will inspect the car for any damages. If damages are found, they will be added to your final bill.",
+    "type": "2"
+  },
+  {
+    "title": "Final Payment",
+    "description": "Pay the final bill, including the rental cost and any additional charges for damages or extra services.",
+    "type": "2"
+  },
+  {
+    "title": "1. Choose Your Car",
+    "description": "Select from our wide range of vehicles.",
+    "type": "3"
+  },
+  {
+    "title": "2. Book Online",
+    "description": "Reserve your car in just a few clicks.",
+    "type": "3"
+  },
+  {
+    "title": "3. Pick Up & Drive",
+    "description": "Collect your car and hit the road!",
+    "type": "3"
+  },
+  {
+    "title": "Wide Range of Cars",
+    "description": "Choose from a variety of cars to suit your needs.",
+    "type": "4"
+  },
+  {
+    "title": "Affordable Prices",
+    "description": "Get the best deals and discounts on rentals.",
+    "type": "4"
+  },
+  {
+    "title": "24/7 Support",
+    "description": "We're here to help you anytime, anywhere.",
+    "type": "4"
+  }
+]

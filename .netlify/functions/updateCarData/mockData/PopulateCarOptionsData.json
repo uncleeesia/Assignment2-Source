@@ -1,0 +1,306 @@
+[
+  {
+    "car": "Kona",
+    "brand": "Hyundai",
+    "shortDescription": "A compact SUV with a stylish design, advanced safety features, and efficient performance.",
+    "imgUrl": "./asset/hyundai_kona.jpg",
+    "specifications": {
+      "range": "258 miles",
+      "horsepower": "201 HP",
+      "zeroToSixty": "7.6 seconds",
+      "chargingTime": "10-80% in 47 minutes (Fast Charging)",
+      "seatingCapacity": 5,
+      "driveType": "Front-Wheel Drive (FWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "3 hours ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "12 Feb 2025",
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "Minor scratches on rear bumper",
+      "mileage": "8,942 km",
+      "batteryHealth": "96%"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$80.00"
+  },
+  {
+    "car": "Ioniq 5 N",
+    "brand": "Hyundai",
+    "shortDescription": "A high-performance electric crossover offering sporty dynamics and cutting-edge technology.",
+    "imgUrl": "./asset/Hyundai-Ioniq-5-N.avif",
+    "specifications": {
+      "range": "300 miles",
+      "horsepower": "601 HP",
+      "zeroToSixty": "3.4 seconds",
+      "chargingTime": "10-80% in 18 minutes (Ultra-Fast Charging)",
+      "seatingCapacity": 5,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "1 hour ago",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": {
+        "title": "Ubi",
+        "description": "1 Ubi Avenue 3, Singapore 408857"
+      },
+      "previousRenter": ""
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "",
+      "mileage": "0 km",
+      "batteryHealth": "100%"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$120.00"
+  },
+  {
+    "car": "iX xDrive40",
+    "brand": "BMW",
+    "shortDescription": "A luxury all-electric SUV with futuristic design, premium comfort, and intelligent driving features.",
+    "imgUrl": "./asset/BMW-iX-xDrive40.jpg",
+    "specifications": {
+      "range": "236-264 miles",
+      "horsepower": "322 HP",
+      "zeroToSixty": "6.1 seconds",
+      "chargingTime": "10-80% in 40 minutes",
+      "seatingCapacity": 5,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "2 hours ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "15 Feb 2025",
+      "currentLocation": {
+        "title": "Ubi",
+        "description": "1 Ubi Avenue 3, Singapore 408857"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "12,345 km",
+      "batteryHealth": "98%"
+    },
+    "previousRental": {
+      "renter": "John Doe",
+      "duration": "3 Days",
+      "returnDate": "10 Feb 2025"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$180.00"
+  },
+  {
+    "car": "AMG EQE 43",
+    "brand": "Mercedes",
+    "shortDescription": "A performance-focused electric sedan combining AMG power with advanced electric mobility.",
+    "imgUrl": "./asset/Mercedes-AMG-EQE-43.jpg",
+    "specifications": {
+      "range": "260 miles",
+      "horsepower": "469 HP",
+      "zeroToSixty": "4.2 seconds",
+      "chargingTime": "10-80% in 32 minutes (Fast Charging)",
+      "seatingCapacity": 5,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Rented Out",
+      "lastUpdated": "1 hour ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "20 Feb 2025",
+      "currentLocation": {
+        "title": "Bukit Batok",
+        "description": "10 Bukit Batok Crescent, Singapore 658079"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "5,678 km",
+      "batteryHealth": "99%"
+    },
+    "previousRental": {
+      "renter": "David Lim",
+      "duration": "7 Days",
+      "returnDate": "15 Feb 2025"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$170.00"
+  },
+  {
+    "car": "Polestar 2",
+    "brand": "Polestar",
+    "shortDescription": "A sleek, all-electric fastback with Scandinavian design and high-performance capabilities.",
+    "imgUrl": "./asset/Polestar-2.jpg",
+    "specifications": {
+      "range": "300 miles",
+      "horsepower": "408 HP",
+      "zeroToSixty": "4.5 seconds",
+      "chargingTime": "10-80% in 35 minutes (Fast Charging)",
+      "seatingCapacity": 5,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "Just Now",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": {
+        "title": "Bukit Batok",
+        "description": "10 Bukit Batok Crescent, Singapore 658079"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "10 km",
+      "batteryHealth": "100%"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$80.00"
+  },
+  {
+    "car": "Lucid Air",
+    "brand": "Lucid",
+    "shortDescription": "A premium electric sedan with groundbreaking range and ultra-fast charging.",
+    "imgUrl": "./asset/Lucid-Air.jpg",
+    "specifications": {
+      "range": "516 miles",
+      "horsepower": "933 HP",
+      "zeroToSixty": "2.7 seconds",
+      "chargingTime": "10-80% in 20 minutes (Ultra-Fast Charging)",
+      "seatingCapacity": 5,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "30 minutes ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "17 Feb 2025",
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Good",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "3,210 km",
+      "batteryHealth": "98%"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$180.00"
+  },
+  {
+    "car": "Porsche Taycan 4S",
+    "brand": "Porsche",
+    "shortDescription": "A high-performance luxury electric sedan with cutting-edge technology and handling.",
+    "imgUrl": "./asset/Porsche-Taycan-4S.jpg",
+    "specifications": {
+      "range": "288 miles",
+      "horsepower": "522 HP",
+      "zeroToSixty": "3.8 seconds",
+      "chargingTime": "10-80% in 22 minutes (Supercharging)",
+      "seatingCapacity": 4,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "Just Now",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": {
+        "title": "Ubi",
+        "description": "1 Ubi Avenue 3, Singapore 408857"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "8 km",
+      "batteryHealth": "100%"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$210.00"
+  },
+  {
+    "car": "Model S",
+    "brand": "Tesla",
+    "shortDescription": "A premium electric sedan with impressive range, autopilot capabilities, and rapid acceleration.",
+    "imgUrl": "./asset/Tesla-Model-S.jpg",
+    "specifications": {
+      "range": "405 miles",
+      "horsepower": "670 HP",
+      "zeroToSixty": "3.1 seconds",
+      "chargingTime": "10-80% in 30 minutes (Supercharging)",
+      "seatingCapacity": 5,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Available",
+      "lastUpdated": "Just Now",
+      "reservation": "Not Yet Rented",
+      "nextAvailability": "Immediate",
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "New",
+      "vehicleConditionDetail": "No damages reported",
+      "mileage": "10 km",
+      "batteryHealth": "100%"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$170.00"
+  },
+  {
+    "car": "Model X",
+    "brand": "Tesla",
+    "shortDescription": "A luxury electric SUV with falcon-wing doors, long-range capabilities, and high-tech features.",
+    "imgUrl": "./asset/Tesla-Model-X.jpg",
+    "specifications": {
+      "range": "348 miles",
+      "horsepower": "670 HP",
+      "zeroToSixty": "3.8 seconds",
+      "chargingTime": "10-80% in 30 minutes (Supercharging)",
+      "seatingCapacity": 7,
+      "driveType": "All-Wheel Drive (AWD)"
+    },
+    "rentalStatus": {
+      "availability": "Unavailable",
+      "lastUpdated": "30 minutes ago",
+      "reservation": "Confirmed",
+      "nextAvailability": "18 Feb 2025",
+      "currentLocation": {
+        "title": "Changi",
+        "description": "80 Airport Boulevard, Singapore 819642"
+      }
+    },
+    "inspectionReport": {
+      "vehicleCondition": "Under Maintenaince",
+      "vehicleConditionDetail": "Servicing",
+      "mileage": "9,500 km",
+      "batteryHealth": "95%"
+    },
+    "previousRental": {
+      "renter": "Rachel Tan",
+      "duration": "5 Days",
+      "returnDate": "15 Feb 2025"
+    },
+    "insurancePrice": "$30",
+    "pricePerDay": "$180.00"
+  }
+]
