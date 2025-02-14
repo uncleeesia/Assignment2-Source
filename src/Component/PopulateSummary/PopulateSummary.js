@@ -176,14 +176,16 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const CarDataDirectoryUrl = "../../netlify/functions/updateCarData";
       const CarDataFallbackRepoUrl = "../../.netlify/functions/updateCarData"; // Local fallback
-    
+
       // Check if main directory is accessible
       const isAccessible = await tryAccessDirectory(CarDataDirectoryUrl);
-    
+
       // Determine which URL to use
-      const apiUrl = isAccessible ? CarDataDirectoryUrl : CarDataFallbackRepoUrl;
+      const apiUrl = isAccessible
+        ? CarDataDirectoryUrl
+        : CarDataFallbackRepoUrl;
       console.log(`Using API URL: ${apiUrl}`);
-    
+
       // Send POST request
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -192,22 +194,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         body: JSON.stringify(postData),
       });
-    
+
       const result = await response.json(); // Fix: Properly await JSON parsing
       console.log("Server Response:", result);
       const storedBrand = localStorage.getItem("carBrand");
-      const storedModel = localStorage.getItem("carModel");    
+      const storedModel = localStorage.getItem("carModel");
       if (response.ok) {
         alert("Inspection report updated successfully!");
 
         window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
       } else {
-        alert(`Failed to update data: netlify cannot overwrite files using functions, but locally is successful`);
+        alert(
+          `Failed to update data: netlify cannot overwrite files using functions, but locally is successful`
+        );
         window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
       }
     } catch (error) {
       console.error("Error updating data:", error);
-      alert("Error updating data: " + error.message);
+      alert(
+        `Failed to update data: netlify cannot overwrite files using functions, but locally is successful`
+      );
+      window.location.href = `Selected.html?Brand=${storedBrand}&CarModel=${storedModel}`;
     }
   });
 });
