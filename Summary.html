@@ -44,20 +44,23 @@
       <div
         class="container-fluid row justify-content-lg-between justify-content-md-center justify-content-sm-center px-5"
       >
-        <div class="d-flex align-items-center">
+        <div
+          class="col-md-4 col-sm-12 d-flex align-items-center justify-content-start"
+        >
           <img src="./asset/Logo.jpg" style="height: 7vh" alt="" />
           <div class="h3">AZoom Car Rental</div>
         </div>
-        <div class="">
+        <div
+          id="name"
+          class="col-md-4 col-sm-12 justify-content-center d-flex align-items-center text-center"
+        ></div>
+        <div class="col-md-4 col-sm-12">
           <div id="navbar-placeholder"></div>
-          <div id="name"></div>
         </div>
       </div>
     </header>
     <main class="container-fluid pt-3 pb-5 px-5">
-      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7;">
-        Summary
-      </p>
+      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7">Summary</p>
       <!-- Vehicle Summary -->
       <div class="row">
         <!-- Car Image -->
@@ -69,8 +72,7 @@
           />
           <div class="d-flex justify-content-around align-items-center">
             <div id="summaryAvailability">
-              <strong>Status: </strong
-              ><span>Available</span>
+              <strong>Status: </strong><span>Available</span>
             </div>
             <small id="summaryLastUpdated" class="ml-3 text-muted"
               >Last updated: 2 hours ago</small
@@ -84,7 +86,7 @@
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <div>
-                  <h2 id="summaryCarModel" style="color: #555 !important;">
+                  <h2 id="summaryCarModel" style="color: #555 !important">
                     Car Model
                   </h2>
                   <p id="summaryCarBrand" class="mb-3 text-muted">Default</p>
@@ -127,7 +129,7 @@
         <div class="col-md-6">
           <div class="card shadow-sm inspection-card">
             <div class="card-body">
-              <h4 class="mb-4" style="color: #555 !important;">
+              <h4 class="mb-4" style="color: #555 !important">
                 Last Inspection Report
               </h4>
               <div class="row">
@@ -180,7 +182,7 @@
         <form id="editInspectionBlock" class="d-none col-md-6">
           <div class="card shadow-sm inspection-card">
             <div class="card-body">
-              <h4 class="mb-4" style="color: #555 !important;">
+              <h4 class="mb-4" style="color: #555 !important">
                 Submit New Inspection Report
               </h4>
               <div class="row">
@@ -204,9 +206,9 @@
                       <option value="New">New</option>
                       <option value="Good">Good</option>
                       <option value="Damaged">Damaged</option>
-                      <option value="Under Maintenance"
-                        >Under Maintenance</option
-                      >
+                      <option value="Under Maintenance">
+                        Under Maintenance
+                      </option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -299,9 +301,7 @@
         <div id="RentalBlock" class="col-md-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
-              <h4 class="mb-4" style="color: #555 !important;">
-                Rental Status
-              </h4>
+              <h4 class="mb-4" style="color: #555 !important">Rental Status</h4>
 
               <ul class="list-unstyled">
                 <li class="mb-3">

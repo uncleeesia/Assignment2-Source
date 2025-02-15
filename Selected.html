@@ -45,20 +45,25 @@
       <div
         class="container-fluid row justify-content-lg-between justify-content-md-center justify-content-sm-center px-5"
       >
-        <div class="d-flex align-items-center">
+        <div
+          class="col-md-4 col-sm-12 d-flex align-items-center justify-content-start"
+        >
           <img src="./asset/Logo.jpg" style="height: 7vh" alt="" />
           <div class="h3">AZoom Car Rental</div>
         </div>
-        <div class="">
+        <div
+          id="name"
+          class="col-md-4 col-sm-12 justify-content-center d-flex align-items-center text-center"
+        ></div>
+        <div class="col-md-4 col-sm-12">
           <div id="navbar-placeholder"></div>
-          <div id="name"></div>
         </div>
       </div>
     </header>
     <!-- Main Content -->
     <main class="container-fluid pt-3 pb-5 px-5">
       <!-- Car Reservation Section -->
-      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7;">
+      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7">
         Reserve Your Car
       </p>
       <section class="mb-5">
@@ -69,7 +74,7 @@
               src="https://placehold.co/600x400"
               alt="Car Image"
               class="img-fluid ImageSlide mb-4"
-              style="border-radius: 40px;"
+              style="border-radius: 40px"
             />
             <div class="row justify-content-around slideIn">
               <span id="availability" class="mb-2">Status: </span>
@@ -84,13 +89,13 @@
           <div class="col-md-4 mt-3 slideIn">
             <div
               class="row justify-content-between"
-              style="padding-left: 13.4px;"
+              style="padding-left: 13.4px"
             >
               <h3 id="carModel">Default</h3>
               <p
                 id="pricePerDay"
                 class="status-badge bg-success text-white"
-                style="color: #fffafa;"
+                style="color: #fffafa"
               >
                 Price / Day:
               </p>
