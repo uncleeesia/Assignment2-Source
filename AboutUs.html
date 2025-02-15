@@ -60,35 +60,52 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="container-fluid">
-      <div
-        class="row justify-content-lg-between justify-content-md-center justify-content-sm-center px-5"
-      >
-        <div
-          class="col-lg-4 col-md-5 col-sm-12 d-flex align-items-center justify-content-start"
-        >
-          <img src="./asset/Logo.jpg" style="height: 7vh" alt="" />
-          <div class="h3">AZoom Car Rental</div>
-        </div>
+    <header class="container-fluid p-0">
+      <div class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="./asset/Logo.jpg"
+            alt="AZoom Car Rental"
+            class="navbar-logo"
+          />
+          <span class="h3 ml-2 navbar-title">AZoom Car Rental</span>
+        </a>
         <div id="name" class="d-none"></div>
-        <div class="col-lg-4 col-sm-12">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarContent"
+        >
           <div id="navbar-placeholder"></div>
         </div>
       </div>
     </header>
+
     <!-- Main Content -->
     <main class="container-fluid pb-5 py-0 px-0 m-0">
       <section class="container my-5">
         <div class="row justify-content-center">
-          <div class="col-6">
+          <div class="col-6 align-self-center">
             <img class="img-fluid" src="./asset/handingKey.jpg" alt="" />
           </div>
           <div class="col-6">
-            <div class="h4 text-white">
+            <div class="h4" style="color: var(--header-color)">
               WELCOME TO THE
-              <em class="h4" style="color: #e7d2cc">AZOOM CAR RENTAL</em>
+              <em class="h4" style="color: var(--accent-color)"
+                >AZOOM CAR RENTAL</em
+              >
             </div>
-            <p>
+            <p style="color: var(--text-color)">
               While we can't replicate the in-person experience, we're thrilled
               to have you explore our website. Our goal is to provide you with
               an interactive tour of our electric vehicle fleet, allowing you to
@@ -96,51 +113,90 @@
               for financing. At AZoom, we believe that renting an electric
               vehicle should be an experience filled with high expectations.
             </p>
-            <em>— Wei Yang, President of AZoom Car Rental</em>
+            <em style="color: var(--accent-gray)"
+              >— Wei Yang, President of AZoom Car Rental</em
+            >
           </div>
         </div>
       </section>
       <section class="container my-5">
         <div class="row justify-content-center">
           <div class="col-6">
-            <div class="h4 text-white">CORE VALUES</div>
+            <h3 class="mb-4" style="color: var(--header-color)">CORE VALUES</h3>
             <ul class="list-unstyled">
-              <li>
-                <i class="fa fa-check-circle"></i>
-                <strong>Extensive Training:</strong> We undergo comprehensive
-                training to provide you with the knowledge needed to make
-                informed decisions when selecting the electric vehicle that best
-                fits your lifestyle.
+              <li class="mb-3">
+                <i
+                  class="fa fa-check-circle mr-2"
+                  style="color: var(--accent-color)"
+                ></i>
+                <strong style="color: var(--accent-color)"
+                  >Extensive Training:</strong
+                >
+                <span style="color: var(--text-color)"
+                  >We undergo comprehensive training to provide you with the
+                  knowledge needed to make informed decisions when selecting the
+                  electric vehicle that best fits your lifestyle.</span
+                >
               </li>
-              <li>
-                <i class="fa fa-check-circle"></i>
-                <strong>Stress-Free Financing:</strong> We offer a
-                straightforward and transparent financing process, making it
-                easy for you to drive away in your chosen vehicle without
-                unnecessary stress.
+              <li class="mb-3">
+                <i
+                  class="fa fa-check-circle mr-2"
+                  style="color: var(--accent-color)"
+                ></i>
+                <strong style="color: var(--accent-color)"
+                  >Stress-Free Financing:</strong
+                >
+                <span style="color: var(--text-color)"
+                  >We offer a straightforward and transparent financing process,
+                  making it easy for you to drive away in your chosen vehicle
+                  without unnecessary stress.</span
+                >
               </li>
-              <li>
-                <i class="fa fa-check-circle"></i>
-                <strong>Diverse Fleet:</strong> Our robust selection of popular
-                electric vehicles caters to various preferences and needs,
-                ensuring you find the perfect match for your journey.
+              <li class="mb-3">
+                <i
+                  class="fa fa-check-circle mr-2"
+                  style="color: var(--accent-color)"
+                ></i>
+                <strong style="color: var(--accent-color)"
+                  >Diverse Fleet:</strong
+                >
+                <span style="color: var(--text-color)"
+                  >Our robust selection of popular electric vehicles caters to
+                  various preferences and needs, ensuring you find the perfect
+                  match for your journey.</span
+                >
               </li>
-              <li>
-                <i class="fa fa-check-circle"></i>
-                <strong>Safety Commitment:</strong> We prioritize your safety by
-                maintaining our vehicles to the highest standards, ensuring they
-                are road-ready and reliable for every trip.
+              <li class="mb-3">
+                <i
+                  class="fa fa-check-circle mr-2"
+                  style="color: var(--accent-color)"
+                ></i>
+                <strong style="color: var(--accent-color)"
+                  >Safety Commitment:</strong
+                >
+                <span style="color: var(--text-color)"
+                  >We prioritize your safety by maintaining our vehicles to the
+                  highest standards, ensuring they are road-ready and reliable
+                  for every trip.</span
+                >
               </li>
-              <li>
-                <i class="fa fa-check-circle"></i>
-                <strong>Comprehensive Services:</strong> Our expertise spans a
-                wide range of car services, from rentals to maintenance,
-                ensuring a one-stop solution for all your electric vehicle
-                needs.
+              <li class="mb-3">
+                <i
+                  class="fa fa-check-circle mr-2"
+                  style="color: var(--accent-color)"
+                ></i>
+                <strong style="color: var(--accent-color)"
+                  >Comprehensive Services:</strong
+                >
+                <span style="color: var(--text-color)"
+                  >Our expertise spans a wide range of car services, from
+                  rentals to maintenance, ensuring a one-stop solution for all
+                  your electric vehicle needs.</span
+                >
               </li>
             </ul>
           </div>
-          <div class="col-6">
+          <div class="col-6 align-self-center">
             <img class="img-fluid" src="./asset/happyface.jpg" alt="" />
           </div>
         </div>
@@ -168,12 +224,14 @@
       ></section>
     </main>
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 AZoom Car Rental. All rights reserved.</p>
-      <p>
-        <a href="#sitemap">Sitemap</a> |
-        <a href="#privacy-policy">Privacy Policy</a>
-      </p>
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <p class="mb-1">&copy; 2025 AZoom Car Rental. All rights reserved.</p>
+        <p class="mb-0">
+          <a href="#sitemap" class="footer-link">Sitemap</a> |
+          <a href="#privacy-policy" class="footer-link">Privacy Policy</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>

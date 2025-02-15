@@ -13,6 +13,10 @@
     <!-- BOOTSTRAP Library import  -->
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link
@@ -40,24 +44,40 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="container-fluid">
+    <header class="container-fluid p-0">
       <div
-        class="row justify-content-lg-between justify-content-md-center justify-content-sm-center px-5"
+        class="navbar navbar-expand-lg navbar-light d-flex justify-content-center"
       >
-        <div
-          class="col-lg-4 col-md-5 col-sm-12 d-flex align-items-center justify-content-start"
-        >
-          <img src="./asset/Logo.jpg" style="height: 7vh" alt="" />
-          <div class="h3">AZoom Car Rental</div>
-        </div>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="./asset/Logo.jpg"
+            alt="AZoom Car Rental"
+            class="navbar-logo"
+          />
+          <span class="h3 ml-2 navbar-title">AZoom Car Rental</span>
+        </a>
         <div id="name" class="d-none"></div>
-        <div class="col-lg-4 col-sm-12">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarContent"
+        >
           <div id="navbar-placeholder"></div>
         </div>
       </div>
     </header>
     <main class="container-fluid pt-3 pb-5 px-5">
-      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7;">
+      <p class="text-center h1 m-0 mb-4 mt-0" style="color: #eeede7">
         Payment Details
       </p>
       <div class="row justify-content-around">
@@ -118,9 +138,19 @@
                   </label>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-block btn-lg">
-                  Confirm Payment $<span id="paymentAmount">245.00</span>
-                </button>
+                <div class="d-grid">
+                  <button
+                    type="submit"
+                    class="btn btn-payment"
+                    style="color: #b9b7bd"
+                  >
+                    Confirm Payment $<span
+                      class="badge bg-accent ms-2"
+                      id="paymentAmount"
+                      >245.00</span
+                    >
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -139,7 +169,7 @@
                     src="./asset/BMW-iX-xDrive40.jpg"
                     alt="BMW iX"
                     class="img-thumbnail mr-3"
-                    style="width: 30vh; object-fit: cover;"
+                    style="width: 30vh; object-fit: cover"
                   />
                   <div class="align-self-start">
                     <strong id="paymentCarModel">iX xDrive40</strong>
@@ -167,21 +197,27 @@
                   <span id="paymentTotalPrice">$245.00</span>
                 </li>
                 <li class="d-flex justify-content-between font-weight-bold">
-                  <div>Payable <span class="text-muted">(Deposit 60% Of Total)<span> </div>
+                  <div>
+                    Payable
+                    <span class="text-muted">(Deposit 60% Of Total)</span>
+                  </div>
                   <span id="paymentDeposit">$245.00</span>
                 </li>
                 <li>
-                  <small class="font-weight-bold">*Note - Final payment will be charge after inspection of vehicle</small>
+                  <small class="font-weight-bold"
+                    >*Note - Final payment will be charge after inspection of
+                    vehicle</small
+                  >
                 </li>
               </ul>
 
               <hr />
-
-              <a
-                href="summary.html"
-                class="btn btn-outline-secondary btn-block"
-              >
-                <i class="fas fa-arrow-left mr-2"></i>Back to Summary
+              <a href="summary.html">
+                <div class="d-grid">
+                  <button class="btn btn-back">
+                    <i class="bi bi-arrow-left mr-2"></i>Back to Summary
+                  </button>
+                </div>
               </a>
             </div>
           </div>
@@ -189,12 +225,14 @@
       </div>
     </main>
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 AZoom Car Rental. All rights reserved.</p>
-      <p>
-        <a href="#sitemap">Sitemap</a> |
-        <a href="#privacy-policy">Privacy Policy</a>
-      </p>
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <p class="mb-1">&copy; 2025 AZoom Car Rental. All rights reserved.</p>
+        <p class="mb-0">
+          <a href="#sitemap" class="footer-link">Sitemap</a> |
+          <a href="#privacy-policy" class="footer-link">Privacy Policy</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>

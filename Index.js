@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       var localEmail = localStorage.getItem("carRentalEmailLogin");
       var localPassword = localStorage.getItem("carRentalPasswordLogin");
       var localExist = !!localEmail && !!localPassword;
-      const nameElement = document.getElementById("name");
+      var nameElement = document.getElementById("name");
 
       if (!!localEmail) {
         nameElement.classList.toggle("d-none", false);
@@ -27,7 +27,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
           "text-center"
         );
       }
-      nameElement.innerHTML = localExist ? localEmail.split("@")[0] : "";
+
+      !!nameElement
+        ? (nameElement.innerHTML = localExist ? localEmail.split("@")[0] : "")
+        : null;
 
       document
         .getElementById("login")

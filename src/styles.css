@@ -1,12 +1,59 @@
-/* Global Styles */
+/* Table of Contents
+1. Variables
+2. Global Styles
+3. Typography
+4. Buttons
+5. Forms
+6. Header and Navigation
+7. Main Content
+8. Sections
+   8.1 Why Choose Us
+   8.2 Promotion
+   8.3 Customer Feedback
+   8.4 Rent Now Steps
+   8.5 Our Locations
+9. Cards and Components
+10. Footer
+11. Animations
+12. Utilities
+13. Media Queries
+*/
+
+/* 1. Variables */
+:root {
+  --pewter: #b9b7bd;
+  --seashell: #e7d2cc;
+  --accent-gray: #868b8e;
+  --soft-ivory: #eeede7;
+  --header-color: #555;
+  --accent-color: #e7d2cc;
+  --accent-color-dark: #0056b3;
+  --secondary-color: #6c757d;
+  --secondary-color-dark: #545b62;
+  --border-color: #ced4da;
+  --text-color: #333;
+  --background-color: #ffffff;
+  --footer-bg-color: #f8f9fa;
+  --footer-text-color: #6c757d;
+  --footer-link-color: #007bff;
+  --footer-link-hover-color: #0056b3;
+  --navbar-bg-color: #b9b7bd;
+  --navbar-title-color: #333;
+  --navbar-link-color: #333;
+  --navbar-link-hover-color: #007bff;
+  --navbar-toggler-color: rgba(0, 0, 0, 0.1);
+  --navbar-mobile-bg-color: #fff;
+}
+
+/* 2. Global Styles */
 * {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 body {
   line-height: 1.6;
   color: #333;
-  background-color: #b9b7bd !important;
+  background-color: var(--soft-ivory) !important;
 }
 
 a {
@@ -14,12 +61,186 @@ a {
   color: inherit;
 }
 
-/* Header and Navigation */
-header {
-  background-color: #868b8e;
-  color: #eeede7;
-  padding: 1.5rem 0;
+/* 3. Typography */
+.header-color {
+  color: var(--header-color);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
   text-align: center;
+  color: var(--header-color);
+}
+
+/* 4. Buttons */
+.btn {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(134, 139, 142, 0.25);
+  outline: none;
+}
+
+.btn-book {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-book:hover {
+  background-color: #218838;
+  color: white;
+}
+
+.btn-sign-in {
+  background-color: var(--seashell);
+  color: var(--accent-gray);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-sign-in:hover {
+  background-color: var(--pewter);
+  color: var(--soft-ivory);
+}
+
+.btn-admin-edit {
+  background-color: var(--accent-gray);
+  color: var(--soft-ivory);
+  border: 1px solid transparent;
+}
+
+.btn-admin-edit:hover {
+  background-color: var(--pewter);
+  color: var(--seashell);
+}
+
+.btn-payment {
+  background-color: var(--seashell);
+  color: var(--accent-gray);
+  border: 1px solid transparent;
+}
+
+.btn-payment:hover {
+  background-color: var(--pewter);
+  color: var(--soft-ivory);
+}
+
+.btn-proceed {
+  background-color: var(--accent-gray);
+  color: var(--soft-ivory);
+  border: 1px solid transparent;
+}
+
+.btn-proceed:hover {
+  background-color: var(--pewter);
+  color: var(--seashell);
+}
+
+.btn-back {
+  background-color: var(--soft-ivory);
+  color: var(--accent-gray);
+  border: 1px solid var(--accent-gray);
+}
+
+.btn-back:hover {
+  background-color: var(--pewter);
+  color: var(--seashell);
+  border-color: transparent;
+}
+
+.btn-download {
+  background-color: var(--seashell);
+  color: var(--accent-gray);
+  border: 1px solid transparent;
+}
+
+.btn-download:hover {
+  background-color: var(--pewter);
+  color: var(--soft-ivory);
+}
+
+.btn-learn-more {
+  background-color: var(--accent-gray);
+  color: var(--soft-ivory);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-learn-more:hover {
+  background-color: var(--pewter);
+  color: var(--seashell);
+}
+
+.btn-primary {
+  background-color: var(--accent-color, #007bff);
+  border-color: var(--accent-color, #007bff);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--accent-color-dark, #0056b3);
+  border-color: var(--accent-color-dark, #0056b3);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color, #6c757d);
+  border-color: var(--secondary-color, #6c757d);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--secondary-color-dark, #545b62);
+  border-color: var(--secondary-color-dark, #545b62);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border: 1px solid var(--border-color, #ced4da);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: var(--accent-color, #007bff);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-select {
+  appearance: none;
+  background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+}
+
+/* 6. Header and Navigation */
+header {
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-weight: 600;
+}
+
+.custom-navbar {
+  background-color: var(--navbar-bg-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -28,60 +249,81 @@ nav {
 
 nav a,
 #name {
-  color: #e7d2cc;
-  font-weight: bold;
+  color: var(--text-color);
+  font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-nav a:hover {
-  background-color: #b9b7bd;
-  color: #eeede7;
+nav a:hover,
+nav a:focus {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+}
+
+.navbar-title {
+  color: var(--navbar-title-color, #333);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--navbar-link-color, #333);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: var(--navbar-link-hover-color, #007bff);
+}
+
+.navbar-toggler {
+  border-color: var(--navbar-toggler-color, rgba(0, 0, 0, 0.1));
 }
 
 #login,
 #logout {
-  border-radius: 10px;
-  color: #e7d2cc;
-  font-weight: bold;
-  border-radius: 10px;
-  transition: background-color 0.3s;
   background-color: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 #login:hover,
-#logout:hover {
-  background-color: #b9b7bd;
-  color: #eeede7;
+#logout:hover,
+#login:focus,
+#logout:focus {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-form {
-  font-family: Arial, sans-serif;
-}
-
-button {
-  background-color: #c8e0f4;
-}
-
-/* Main Content */
+/* 7. Main Content */
 main {
   padding: 2rem;
-  background-color: #b9b7bd !important;
+  background-color: var(--soft-ivory) !important;
 }
 
 section {
   margin-bottom: 2rem;
 }
 
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  text-align: center;
-  color: #fffafa !important;
-}
-
-/* Why Choose Us Section */
+/* 8. Sections */
+/* 8.1 Why Choose Us */
 .customBorder {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -105,19 +347,31 @@ h2 {
 .customBorder h3 {
   color: #1e90ff;
   margin-bottom: 0.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0
 }
+/* 8. Sections (continued) */
 
-/* Promotion Section */
+/* 8.2 Promotion Section */
 .promotion {
-  background-color: #eeede7;
-  color: #585859;
+  background-color: var(--seashell);
+  color: var(--accent-gray);
   padding: 2rem;
-  text-align: center;
-  border-radius: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Customer Feedback Section */
+.promotion-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--header-color);
+}
+
+.promotion-text {
+  font-size: 1.1rem;
+  color: var(--accent-gray);
+}
+
+/* 8.3 Customer Feedback Section */
 .feedback {
   display: flex;
   flex-wrap: wrap;
@@ -138,7 +392,7 @@ h2 {
   font-style: italic;
 }
 
-/* Rent Now Steps Section */
+/* 8.4 Rent Now Steps Section */
 .rent-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -158,7 +412,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Our Locations Section */
+/* 8.5 Our Locations Section */
 .locations {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -176,6 +430,30 @@ h2 {
 .locations h3 {
   color: #1e90ff;
   margin-bottom: 0.5rem;
+}
+
+/* 9. Cards and Components */
+.card {
+  background-color: #fffafa !important;
+  border-radius: 40px !important;
+}
+
+.card-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .status-badge {
@@ -203,7 +481,7 @@ h2 {
   font-weight: 500;
 }
 
-/* Footer */
+/* 10. Footer */
 footer {
   background-color: #031927;
   color: #fff;
@@ -220,47 +498,24 @@ footer a:hover {
   color: #ffdd57;
 }
 
-.card {
-  background-color: #fffafa !important;
-  border-radius: 40px !important;
+.footer-link {
+  color: var(--footer-link-color, #007bff);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.card-body {
-  overflow-x: hidden;
-  overflow-y: auto;
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--footer-link-hover-color, #0056b3);
+  text-decoration: underline;
 }
 
-.card-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.card-body::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-.card-body::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feedback div {
-    width: 100%;
-  }
-}
-
+/* 11. Animations */
 @keyframes ImageSlide {
   from {
     transform: translateY(100%);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
@@ -272,7 +527,6 @@ footer a:hover {
     transform: translateY(100%);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
@@ -287,13 +541,23 @@ footer a:hover {
   animation: slideIn 1.5s ease-out forwards;
 }
 
+/* 12. Utilities */
+.badge {
+  padding: 0.5em 0.75em;
+  border-radius: 4px;
+}
+
+.bg-accent {
+  background-color: var(--accent-gray);
+  color: var(--soft-ivory);
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   background: transparent !important;
   border: none;
   width: auto;
 }
-
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -307,7 +571,6 @@ footer a:hover {
 
 .brand-logo {
   width: 100px;
-  /* Adjust as needed */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   filter: grayscale(50%);
 }
@@ -320,4 +583,102 @@ footer a:hover {
 
 .fa-check-circle {
   color: #e7d2cc;
+}
+
+.reservation-title {
+  color: var(--header-color, #333);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reservation-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color, #007bff);
+  border-radius: 2px;
+}
+
+.summary-title {
+  color: var(--header-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.summary-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color, #e7d2cc);
+  border-radius: 1.5px;
+}
+
+/* 13. Media Queries */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a,
+  #name,
+  #login,
+  #logout {
+    margin-bottom: 0.5rem;
+  }
+
+  .feedback div {
+    width: 100%;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+
+  .reservation-title,
+  .summary-title {
+    font-size: 2rem;
+  }
+
+  header .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .col-sm-12 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: var(--navbar-mobile-bg-color, #fff);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 }
