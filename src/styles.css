@@ -551,17 +551,74 @@ footer a:hover {
   background-color: var(--accent-gray);
   color: var(--soft-ivory);
 }
-
-.carousel-control-prev,
-.carousel-control-next {
-  background: transparent !important;
-  border: none;
-  width: auto;
+.carousel-item {
+  height: 80vh;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1);
+.carousel-background {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding-bottom: 3rem;
+}
+
+.btn-learn-more,
+.btn-book {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-content {
+    text-align: center;
+  }
+}
+.carousel-control-prev-icons,
+.carousel-control-next-icons {
+  background-image: none;
+}
+
+.carousel-control-prev-icons:after,
+.carousel-control-next-icons:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+}
+
+.carousel-control-prev-icons:after {
+  transform: rotate(-45deg);
+}
+
+.carousel-control-next-icons:after {
+  transform: rotate(135deg);
+}
+
+.carousel-control-prev-icons,
+.carousel-control-next-icons {
+  filter: invert(1) grayscale(100);
 }
 
 .carousel-control-prev:hover,

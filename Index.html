@@ -54,7 +54,9 @@
   <body>
     <!-- Header -->
     <header class="container-fluid p-0">
-      <div class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
+      <div
+        class="navbar navbar-expand-lg navbar-light d-flex justify-content-center"
+      >
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img
             src="./asset/Logo.jpg"
@@ -95,117 +97,98 @@
         </ol>
 
         <!-- Carousel Slides -->
-        <div class="carousel-inner">
-          <!-- Slide 1 -->
-          <div class="carousel-item active" style="height: 80vh">
-            <div
-              class="d-flex jumbotron jumbotron-fluid align-items-end"
-              style="
-                background-color: rgba(0, 0, 0, 0.5);
-                background-image: url('./asset/HeroBanner1.jpg');
-                background-size: cover;
-                background-position: center;
-                height: 100%;
-              "
-            >
-              <div class="container-fluid text-white px-5">
-                <h1 class="display-4">Welcome to Out Website</h1>
-                <p class="lead">
-                  Explore the road with sustainable, eco-friendly electric cars.
-                  Rent today and join the green revolution!
-                </p>
-                <a href="AboutUs.html" class="col-2-lg col-4-md">
+        <div
+          id="heroCarousel"
+          class="carousel slide"
+          data-ride="carousel"
+          aria-label="Hero Banner Carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active" aria-label="Welcome Slide">
+              <div
+                class="carousel-background"
+                style="background-image: url('./asset/HeroBanner1.jpg')"
+              >
+                <div class="carousel-content container-fluid text-white px-5">
+                  <h1 class="display-4">Welcome to Our Website</h1>
+                  <p class="lead">
+                    Explore the road with sustainable, eco-friendly electric
+                    cars. Rent today and join the green revolution!
+                  </p>
                   <div class="d-grid">
-                    <button class="btn btn-learn-more">
+                    <a
+                      href="AboutUs.html"
+                      class="btn btn-learn-more col-2-lg col-4-md"
+                    >
                       <i class="bi bi-info-circle mr-2"></i>Learn More
-                    </button>
+                    </a>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Slide 2 -->
-          <div class="carousel-item" style="height: 80vh">
-            <div
-              class="d-flex jumbotron jumbotron-fluid align-items-end"
-              style="
-                background-image: url('./asset/HeroBanner2.jpg');
-                background-size: cover;
-                background-position: center;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-              "
-            >
-              <div class="container-fluid text-white px-5">
-                <h1 class="display-4">Your Next Ride is Just a Click Away</h1>
-                <p class="lead">
-                  Skip the hassle and drive with ease! Book an electric car
-                  today and enjoy a smooth, eco-friendly journey at unbeatable
-                  rates.
-                </p>
-                <a href="./CarOptions.html" class="col-2-lg col-4-md">
+            <!-- Slide 2 -->
+            <div class="carousel-item" aria-label="Book Now Slide">
+              <div
+                class="carousel-background"
+                style="background-image: url('./asset/HeroBanner2.jpg')"
+              >
+                <div class="carousel-content container-fluid text-white px-5">
+                  <h1 class="display-4">Your Next Ride is Just a Click Away</h1>
+                  <p class="lead">
+                    Skip the hassle and drive with ease! Book an electric car
+                    today and enjoy a smooth, eco-friendly journey at unbeatable
+                    rates.
+                  </p>
                   <div class="d-grid">
-                    <button class="btn btn-book">
+                    <a
+                      href="./CarOptions.html"
+                      class="btn btn-book col-2-lg col-4-md"
+                    >
                       <i class="bi bi-cursor-fill mr-2"></i>Book Now
-                    </button>
-                  </div></a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item" style="height: 80vh">
-            <div
-              class="d-flex jumbotron jumbotron-fluid align-items-end"
-              style="
-                background-image: url('./asset/HeroBanner3.jpg');
-                background-size: cover;
-                background-position: center;
-                background-color: rgba(0, 0, 0, 0.5);
-                height: 100%;
-              "
-            >
-              <div class="container-fluid text-white px-5">
-                <h1 class="display-4">Sustainable Journeys Await</h1>
-                <p class="lead">
-                  Reduce your carbon footprint without compromising comfort and
-                  style. Rent an electric car and make a difference!
-                </p>
-                <a href="AboutUs.html" class="col-2-lg col-4-md">
-                  <div class="d-grid">
-                    <button class="btn btn-learn-more">
-                      <i class="bi bi-info-circle mr-2"></i>Learn More
-                    </button>
+                    </a>
                   </div>
-                </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" aria-label="Sustainability Slide">
+              <div
+                class="carousel-background"
+                style="background-image: url('./asset/HeroBanner3.jpg')"
+              >
+                <div class="carousel-content container-fluid text-white px-5">
+                  <h1 class="display-4">Sustainable Journeys Await</h1>
+                  <p class="lead">
+                    Reduce your carbon footprint without compromising comfort
+                    and style. Rent an electric car and make a difference!
+                  </p>
+                  <div class="d-grid">
+                    <a
+                      href="AboutUs.html"
+                      class="btn btn-learn-more col-2-lg col-4-md"
+                    >
+                      <i class="bi bi-info-circle mr-2"></i>Learn More
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Carousel Controls -->
+          <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icons" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icons" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-
-        <!-- Carousel Controls -->
-        <a
-          class="carousel-control-prev"
-          href="#heroCarousel"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#heroCarousel"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
-
       <div class="container-fluid py-4" style="background-color: #eeede7">
         <div class="row justify-content-around align-items-center text-center">
           <img
