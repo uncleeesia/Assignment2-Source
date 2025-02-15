@@ -13,10 +13,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
       var localEmail = localStorage.getItem("carRentalEmailLogin");
       var localPassword = localStorage.getItem("carRentalPasswordLogin");
       var localExist = !!localEmail && !!localPassword;
+      const nameElement = document.getElementById("name");
 
-      document.getElementById("name").innerHTML = localExist
-        ? localEmail.split("@")[0]
-        : "";
+      if (!!localEmail) {
+        nameElement.classList.toggle("d-none", false);
+        nameElement.classList.add(
+          "col-lg-4",
+          "col-md-2",
+          "col-sm-12",
+          "justify-content-center",
+          "d-flex",
+          "align-items-center",
+          "text-center"
+        );
+      }
+      nameElement.innerHTML = localExist ? localEmail.split("@")[0] : "";
 
       document
         .getElementById("login")
