@@ -26,7 +26,8 @@ nav {
   margin-top: 1rem;
 }
 
-nav a, #name{
+nav a,
+#name {
   color: #e7d2cc;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -62,6 +63,7 @@ form {
 button {
   background-color: #c8e0f4;
 }
+
 /* Main Content */
 main {
   padding: 2rem;
@@ -97,11 +99,13 @@ h2 {
 
 .customBorder div:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .customBorder h3 {
   color: #1e90ff;
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Promotion Section */
@@ -179,18 +183,22 @@ h2 {
   padding: 8px 15px;
   border-radius: 20px;
 }
+
 .inspection-card {
   border-left: 4px solid #17a2b8;
 }
+
 .car-image {
   height: 500px;
   object-fit: cover;
   border-radius: 30px;
 }
+
 .spec-list dt {
   color: #6c757d;
   font-weight: 400;
 }
+
 .spec-list dd {
   font-weight: 500;
 }
@@ -241,6 +249,7 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
   }
+
   .feedback div {
     width: 100%;
   }
@@ -251,16 +260,19 @@ footer a:hover {
     transform: translateY(100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
+
 @keyframes slideIn {
   from {
     transform: translateY(100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -273,4 +285,39 @@ footer a:hover {
 
 .slideIn {
   animation: slideIn 1.5s ease-out forwards;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background: transparent !important;
+  border: none;
+  width: auto;
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.8;
+}
+
+.brand-logo {
+  width: 100px;
+  /* Adjust as needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: grayscale(50%);
+}
+
+.brand-logo:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.fa-check-circle {
+  color: #e7d2cc;
 }
