@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     parseFloat(localStoragePaymentDetail.insurancePrice) +
     parseFloat(localStoragePaymentDetail.total * 0.6)
   ).toFixed(2)}`;
-  paymentAmount.innerHTML = `$${(
+  paymentAmount.innerHTML = `${(
     parseFloat(localStoragePaymentDetail.insurancePrice) +
     parseFloat(localStoragePaymentDetail.total * 0.6)
   ).toFixed(2)}`;
